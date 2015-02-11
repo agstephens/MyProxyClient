@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MyProxy Client Module &mdash; MyProxyClient 1.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="MyProxyClient 1.4.0 documentation" href="README.html" />
+    <link rel="prev" title="MyProxy Client Package" href="README.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="README.html" title="MyProxy Client Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="README.html">MyProxyClient 1.4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="myproxy-client-module">
+<h1>MyProxy Client Module<a class="headerlink" href="#myproxy-client-module" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="myproxy.client.MyProxyClient">
+<em class="property">class </em><code class="descclassname">myproxy.client.</code><code class="descname">MyProxyClient</code><span class="sig-paren">(</span><em>cfgFilePath=None</em>, <em>**prop</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>MyProxy client interface</p>
+<p>Based on protocol definitions in:</p>
+<p><a class="reference external" href="http://grid.ncsa.uiuc.edu/myproxy/protocol/">http://grid.ncsa.uiuc.edu/myproxy/protocol/</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>SSL_METHOD</strong> &#8211; encryption method used for connecting to MyProxy server</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>set to TLS version 1</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>MYPROXY_SERVER_ENVVARNAME</strong> &#8211; server environment variable name</li>
+<li><strong>MYPROXY_SERVER_PORT_ENVVARNAME</strong> &#8211; port environment variable name</li>
+<li><strong>MYPROXY_SERVER_DN_ENVVARNAME</strong> &#8211; server certificate Distinguished Name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>environment variable name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>GLOBUS_LOCATION_ENVVARNAME</strong> (<em>string</em>) &#8211; &#8216;GLOBUS_LOCATION&#8217; environment variable</td>
+</tr>
+</tbody>
+</table>
+<p>name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first simple">
+<li><strong>GET_CMD</strong> &#8211; get command string</li>
+<li><strong>INFO_CMD</strong> &#8211; info command string</li>
+<li><strong>DESTROY_CMD</strong> &#8211; destroy command string</li>
+<li><strong>CHANGE_PASSPHRASE_CMD</strong> &#8211; command string to change cred pass-phrase</li>
+<li><strong>STORE_CMD</strong> &#8211; store command string</li>
+<li><strong>GET_TRUST_ROOTS_CMD</strong> &#8211; get trust roots command string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first last"><strong>TRUSTED_CERTS_FIELDNAME</strong> (<em>string</em>) &#8211; field name in get trust roots response for</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>trusted certificate file names</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>TRUSTED_CERTS_FILEDATA_FIELDNAME_PREFIX</strong> (<em>string</em>) &#8211; field name prefix in get</td>
+</tr>
+</tbody>
+</table>
+<p>trust roots response for trusted certificate file contents</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>HOSTCERT_SUBDIRPATH</strong> &#8211; sub-directory path host certificate (as tuple)</li>
+<li><strong>HOSTKEY_SUBDIRPATH</strong> &#8211; sub-directory path to host key (as tuple)</li>
+<li><strong>PRIKEY_NBITS</strong> &#8211; default number of bits for private key generated</li>
+<li><strong>MESSAGE_DIGEST_TYPE</strong> &#8211; message digest type is MD5</li>
+<li><strong>SERVER_RESP_BLK_SIZE</strong> &#8211; block size for retrievals from server</li>
+<li><strong>MAX_RECV_TRIES</strong> &#8211; maximum number of retrievals of size</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>SERVER_RESP_BLK_SIZE before this client gives up</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>DEF_PROXY_FILEPATH</strong> &#8211; default location for proxy file to be written to</li>
+<li><strong>PROXY_FILE_PERMISSIONS</strong> &#8211; file permissions returned proxy file is</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>created with</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>PROPERTY_DEFAULTS</strong> &#8211; sets permissable element names for MyProxy config</td>
+</tr>
+</tbody>
+</table>
+<p>file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>ROOT_USERNAME</strong> &#8211; root username - used to determine output directory</td>
+</tr>
+</tbody>
+</table>
+<p>for trust roots</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>ROOT_TRUSTROOT_DIR</strong> &#8211; default trust root directory if running as root</td>
+</tr>
+</tbody>
+</table>
+<p>user</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>USER_TRUSTROOT_DIR</strong> &#8211; default trust root directory for users other</td>
+</tr>
+</tbody>
+</table>
+<p>than root</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>X509_CERT_DIR_ENVVARNAME</strong> &#8211; environment variable name &#8216;X509_CERT_DIR&#8217;,</td>
+</tr>
+</tbody>
+</table>
+<p>which if set points to the location of the trust roots</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>X509_USER_PROXY_ENVVARNAME</strong> &#8211; environment variable name</td>
+</tr>
+</tbody>
+</table>
+<p>&#8216;X509_USER_PROXY&#8217; if set points to the output location of the output EEC /
+Proxy certificate.  Not currently used by this class, included for
+reference only</p>
+<dl class="attribute">
+<dt id="myproxy.client.MyProxyClient.caCertDir">
+<code class="descname">caCertDir</code><a class="headerlink" href="#myproxy.client.MyProxyClient.caCertDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>trust roots directory containing PEM encoded CA certificates to validate MyProxy server certificate</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myproxy.client.MyProxyClient.changePassphrase">
+<code class="descname">changePassphrase</code><span class="sig-paren">(</span><em>username</em>, <em>passphrase</em>, <em>newPassphrase</em>, <em>sslCertFile=None</em>, <em>sslKeyFile=None</em>, <em>sslKeyFilePassphrase=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.changePassphrase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.changePassphrase" title="Permalink to this definition">¶</a></dt>
+<dd><p>change pass-phrase protecting the credentials for a given username</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>MyProxyClientGetError</strong> &#8211; </li>
+<li><strong>MyProxyClientRetrieveError</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> &#8211; username of credential</li>
+<li><strong>passphrase</strong> &#8211; existing pass-phrase for credential</li>
+<li><strong>newPassphrase</strong> &#8211; new pass-phrase to replace the existing one.</li>
+<li><strong>sslCertFile</strong> &#8211; certificate used for client authentication with</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>the MyProxy server SSL connection.  This ID will be set as the owner
+of the stored credentials.  Only the owner can later remove 
+credentials with myproxy-destroy or the destroy method.  If not set,
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sslKeyFile</strong> &#8211; corresponding private key file.  See explanation</td>
+</tr>
+</tbody>
+</table>
+<p>for sslCertFile</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sslKeyFilePassphrase</strong> &#8211; passphrase for sslKeyFile.  Omit if the</td>
+</tr>
+</tbody>
+</table>
+<p>private key is not password protected.</p>
+<p>:return none</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myproxy.client.MyProxyClient.destroy">
+<code class="descname">destroy</code><span class="sig-paren">(</span><em>username</em>, <em>sslCertFile=None</em>, <em>sslKeyFile=None</em>, <em>sslKeyFilePassphrase=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.destroy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>destroy credentials from the server for a given username</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>MyProxyClientGetError</strong> &#8211; </li>
+<li><strong>MyProxyClientRetrieveError</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> &#8211; username selected for credential</li>
+<li><strong>sslCertFile</strong> &#8211; certificate used for client authentication with</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>the MyProxy server SSL connection.  This ID will be set as the owner
+of the stored credentials.  Only the owner can later remove 
+credentials with myproxy-destroy or the destroy method.  If not set,
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
+:param sslKeyFile: corresponding private key file.  See explanation
+for sslCertFile
+:param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
+private key is not password protected.  
+:return none</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myproxy.client.MyProxyClient.getDelegation">
+<code class="descname">getDelegation</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.getDelegation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.getDelegation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve proxy cert for user - same as logon</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myproxy.client.MyProxyClient.getTrustRoots">
+<code class="descname">getTrustRoots</code><span class="sig-paren">(</span><em>username=''</em>, <em>passphrase=''</em>, <em>writeToCACertDir=False</em>, <em>bootstrap=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.getTrustRoots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.getTrustRoots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get trust roots for the given MyProxy server</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> (<em>basestring</em>) &#8211; username (optional)</li>
+<li><strong>passphrase</strong> (<em>basestring</em>) &#8211; pass-phrase (optional)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>server</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>writeToCACertDir</strong> (<em>bool</em>) &#8211; if set to True, write the retrieved trust roots</td>
+</tr>
+</tbody>
+</table>
+<p>out to the directory specified by the &#8220;caCertDir&#8221; attribute</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bootstrap</strong> (<em>bool</em>) &#8211; If set to True, bootstrap trust roots i.e. connect to</td>
+</tr>
+</tbody>
+</table>
+<p>MyProxy server without verification of the server&#8217;s SSL certificate
+against any CA certificates.  Set to False, for default behaviour:
+verify server SSL certificate against CA certificates held in location
+set by the &#8220;caCertDir&#8221; attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">trust root files as a dictionary keyed by file name with each</td>
+</tr>
+</tbody>
+</table>
+<p>item value set to the file contents
+:rtype: dict</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myproxy.client.MyProxyClient.hostname">
+<code class="descname">hostname</code><a class="headerlink" href="#myproxy.client.MyProxyClient.hostname" title="Permalink to this definition">¶</a></dt>
+<dd><p>hostname of MyProxy server</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myproxy.client.MyProxyClient.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>username</em>, <em>sslCertFile=None</em>, <em>sslKeyFile=None</em>, <em>sslKeyFilePassphrase=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>return True/False whether credentials exist on the server for a 
+given username</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>MyProxyClientGetError</strong> &#8211; </li>
+<li><strong>MyProxyClientRetrieveError</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> (<em>string</em>) &#8211; username selected for credential</li>
+<li><strong>sslCertFile</strong> (<em>string</em>) &#8211; certificate used for client authentication with</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>the MyProxy server SSL connection.  This ID will be set as the owner
+of the stored credentials.  Only the owner can later remove 
+credentials with myproxy-destroy or the destroy method.  If not set,
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
+:type sslKeyFile: string 
+:param sslKeyFile: corresponding private key file.  See explanation
+for sslCertFile
+:type sslKeyFilePassphrase: string
+:param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
+private key is not password protected.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="myproxy.client.MyProxyClient.locateClientCredentials">
+<em class="property">classmethod </em><code class="descname">locateClientCredentials</code><span class="sig-paren">(</span><em>enableTmpFileLoc=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.locateClientCredentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.locateClientCredentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the location of a client certificate and private key to use to 
+authenticate with the server based on the various default locations
+that MyProxy/Globus support</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enableTmpFileLoc</strong> &#8211; enable setting based on /tmp/x509up_&lt;uid&gt;,</td>
+</tr>
+</tbody>
+</table>
+<p>defaults to False
+:type enableTmpFileLoc: bool
+:return: private key and certificate file location to use based on the
+current environment
+:rtype: tuple</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myproxy.client.MyProxyClient.logon">
+<code class="descname">logon</code><span class="sig-paren">(</span><em>username</em>, <em>passphrase</em>, <em>credname=None</em>, <em>lifetime=None</em>, <em>keyPair=None</em>, <em>certReq=None</em>, <em>nBitsForKey=4096</em>, <em>bootstrap=False</em>, <em>updateTrustRoots=False</em>, <em>authnGetTrustRootsCall=False</em>, <em>sslCertFile=None</em>, <em>sslKeyFile=None</em>, <em>sslKeyFilePassphrase=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.logon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.logon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a proxy credential from a MyProxy server</p>
+<p>Exceptions:  MyProxyClientGetError, MyProxyClientRetrieveError</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> (<em>basestring</em>) &#8211; username of credential</li>
+<li><strong>passphrase</strong> (<em>basestring</em>) &#8211; pass-phrase for private key of credential held on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>server</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>credname</strong> (<em>string / None type</em>) &#8211; optional credential name - provides additional means</td>
+</tr>
+</tbody>
+</table>
+<p>to specify credential to be retrieved</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lifetime</strong> (<em>int</em>) &#8211; lifetime for generated certificate</li>
+<li><strong>keyPair</strong> (<em>OpenSSL.crypto.PKey</em>) &#8211; Public/Private key pair.  This is ignored if a</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>certificate request is passed via the certReq keyword</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>certReq</strong> (<em>string</em>) &#8211; ASN1 format certificate request, if none set, one is</td>
+</tr>
+</tbody>
+</table>
+<p>created along with a key pair</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nBitsForKey</strong> (<em>int</em>) &#8211; number of bits to use when generating key pair,</td>
+</tr>
+</tbody>
+</table>
+<p>defaults to the PRIKEY_NBITS class variable setting.  This keyword is
+ignored if a key pair is passed in from an external source via the
+keyPair keyword</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return credentials as strings in PEM format:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">the</td>
+</tr>
+</tbody>
+</table>
+<p>user certificate, it&#8217;s private key and the issuing certificate.  The
+issuing certificate is only set if the user certificate is a proxy</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bootstrap</strong> (<em>bool</em>) &#8211; If set to True, bootstrap trust roots i.e. connect to</td>
+</tr>
+</tbody>
+</table>
+<p>MyProxy server without verification of the server&#8217;s SSL certificate
+against any CA certificates.  Set to False, for default behaviour:
+verify server SSL certificate against CA certificates held in location
+set by the &#8220;caCertDir&#8221; attribute.  If bootstrap is set, updateTrustRoots
+will be forced to True also</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>updateTrustRoots</strong> (<em>bool</em>) &#8211; set to True to update the trust roots</li>
+<li><strong>authnGetTrustRootsCall</strong> (<em>bool</em>) &#8211; pass username and password to</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>getTrustRoots call.  getTrustRoots is invoked if the &#8220;updateTrustRoots&#8221;
+or &#8220;bootstrap&#8221; keywords are set.  This is not recommended for 
+bootstrap since in this case the server is NOT authenticated by this 
+client.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sslCertFile</strong> &#8211; applies to SSL client based authentication -</td>
+</tr>
+</tbody>
+</table>
+<p>alternative to username/pass-phrase based.  This certificate is used for 
+authentication with MyProxy server over the SSL connection.  If not set,
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
+:param sslKeyFile: corresponding private key file.  See explanation
+for sslCertFile
+:param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
+private key is not password protected.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myproxy.client.MyProxyClient.openSSLConfFilePath">
+<code class="descname">openSSLConfFilePath</code><a class="headerlink" href="#myproxy.client.MyProxyClient.openSSLConfFilePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>file path for OpenSSL config file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myproxy.client.MyProxyClient.openSSLConfig">
+<code class="descname">openSSLConfig</code><a class="headerlink" href="#myproxy.client.MyProxyClient.openSSLConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>OpenSSLConfig object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myproxy.client.MyProxyClient.parseConfig">
+<code class="descname">parseConfig</code><span class="sig-paren">(</span><em>cfg</em>, <em>section='DEFAULT'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.parseConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.parseConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract parameters from _cfg config object</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myproxy.client.MyProxyClient.port">
+<code class="descname">port</code><a class="headerlink" href="#myproxy.client.MyProxyClient.port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Port number for MyProxy server</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myproxy.client.MyProxyClient.proxyCertLifetime">
+<code class="descname">proxyCertLifetime</code><a class="headerlink" href="#myproxy.client.MyProxyClient.proxyCertLifetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default proxy cert. lifetime (seconds) used in logon request</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myproxy.client.MyProxyClient.proxyCertMaxLifetime">
+<code class="descname">proxyCertMaxLifetime</code><a class="headerlink" href="#myproxy.client.MyProxyClient.proxyCertMaxLifetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default max. lifetime allowed for Proxy Certificate retrieved - used by store method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myproxy.client.MyProxyClient.put">
+<code class="descname">put</code><span class="sig-paren">(</span><em>username</em>, <em>passphrase</em>, <em>userCertFile</em>, <em>userKeyFile</em>, <em>lifetime=None</em>, <em>sslCertFile=None</em>, <em>sslKeyFile=None</em>, <em>sslKeyFilePassphrase=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.put"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store a proxy credential on the server</p>
+<p>Unfortunately this method is not implemented as it requires the creation
+of a proxy certificate by the client but PyOpenSSL doesn&#8217;t currently 
+support the required proxyCertInfo X.509 certificate extension</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Raises NotImplementedError:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">see above</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> (<em>string</em>) &#8211; username selected for new credential</li>
+<li><strong>passphrase</strong> (<em>string</em>) &#8211; pass-phrase for new credential.  This will be used</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>by the server to authenticate later requests.  IT must be at least
+6 characters.  The server may impose other restrictions too depending
+on its configuration.
+:type certFile: string
+:param certFile: user&#8217;s X.509 proxy certificate in PEM format
+:type keyFile: string
+:param keyFile: equivalent private key file in PEM format
+:type sslCertFile: string
+:param sslCertFile: certificate used for client authentication with
+the MyProxy server SSL connection.  If not set,
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
+:type sslKeyFile: string
+:param sslKeyFile: corresponding private key file.  See explanation
+for sslCertFile
+:type sslKeyFilePassphrase: string 
+:param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
+private key is not password protected.  
+:type lifetime: int / None
+:param lifetime: the maximum lifetime allowed for retrieved proxy 
+credentials in seconds. defaults to proxyCertMaxLifetime attribute value</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="myproxy.client.MyProxyClient.readProxyFile">
+<em class="property">classmethod </em><code class="descname">readProxyFile</code><span class="sig-paren">(</span><em>filePath=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.readProxyFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.readProxyFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read proxy cert file following the format used by myproxy-logon - 
+proxy, cert, private key, user cert.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple containing proxy cert, private key, user cert</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myproxy.client.MyProxyClient.serverDN">
+<code class="descname">serverDN</code><a class="headerlink" href="#myproxy.client.MyProxyClient.serverDN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distinguished Name for MyProxy Server Certificate</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myproxy.client.MyProxyClient.setDefaultCACertDir">
+<code class="descname">setDefaultCACertDir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.setDefaultCACertDir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.setDefaultCACertDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make default trust root setting - the directory containing the CA 
+certificates for verifying the MyProxy server&#8217;s SSL certificate.</p>
+<p>The setting is made by using standard Globus defined locations and
+environment variable settings</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myproxy.client.MyProxyClient.ssl_verification">
+<code class="descname">ssl_verification</code><a class="headerlink" href="#myproxy.client.MyProxyClient.ssl_verification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class with a method which is passed to the SSL context to verify the peer (MyProxy server) certificate in the SSL handshake between this client and the MyProxy server</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myproxy.client.MyProxyClient.store">
+<code class="descname">store</code><span class="sig-paren">(</span><em>username</em>, <em>passphrase</em>, <em>certFile</em>, <em>keyFile</em>, <em>sslCertFile=None</em>, <em>sslKeyFile=None</em>, <em>sslKeyFilePassphrase=None</em>, <em>lifetime=None</em>, <em>force=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.store"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload credentials to the server</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>MyProxyClientGetError</strong> &#8211; </li>
+<li><strong>MyProxyClientRetrieveError</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> (<em>string</em>) &#8211; username selected for new credential</li>
+<li><strong>passphrase</strong> (<em>string</em>) &#8211; pass-phrase for new credential.  This is the pass</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>phrase which protects keyfile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>certFile</strong> (<em>string</em>) &#8211; user&#8217;s X.509 certificate in PEM format</li>
+<li><strong>keyFile</strong> (<em>string</em>) &#8211; equivalent private key file in PEM format</li>
+<li><strong>sslCertFile</strong> (<em>string</em>) &#8211; certificate used for client authentication with</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>the MyProxy server SSL connection.  This ID will be set as the owner
+of the stored credentials.  Only the owner can later remove 
+credentials with myproxy-destroy or the destroy method.  If not set,
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem or if this
+is not set, certFile
+:type sslKeyFile: string
+:param sslKeyFile: corresponding private key file.  See explanation
+for sslCertFile
+:type sslKeyFilePassphrase: string 
+:param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
+private key is not password protected.  Nb. keyFile is expected to
+be passphrase protected as this will be the passphrase used for
+logon / getDelegation.
+:type Force: bool
+:param force: set to True to overwrite any existing creds with the
+same username.  If, force=False a check is made with a call to info.
+If creds already, exist exit without proceeding</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="myproxy.client.MyProxyClient.writeProxyFile">
+<em class="property">classmethod </em><code class="descname">writeProxyFile</code><span class="sig-paren">(</span><em>proxyCert</em>, <em>proxyPriKey</em>, <em>userX509Cert</em>, <em>filePath=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myproxy/client.html#MyProxyClient.writeProxyFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myproxy.client.MyProxyClient.writeProxyFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write out proxy cert to file in the same way as myproxy-logon - 
+proxy cert, private key, user cert.  Nb. output from logon can be
+passed direct into this method</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>proxyCert</strong> (<em>string</em>) &#8211; proxy certificate</li>
+<li><strong>proxyPriKey</strong> (<em>string</em>) &#8211; private key for proxy</li>
+<li><strong>userX509Cert</strong> (<em>string</em>) &#8211; user certificate which issued the proxy</li>
+<li><strong>filePath</strong> (<em>string</em>) &#8211; set to override the default filePath</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="README.html"
+                        title="previous chapter">MyProxy Client Package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/client.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="README.html" title="MyProxy Client Package"
+             >previous</a> |</li>
+        <li><a href="README.html">MyProxyClient 1.4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, P J Kershaw.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+    </div>
+  </body>
+</html>

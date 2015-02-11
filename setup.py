@@ -25,50 +25,20 @@ except ImportError:
     use_setuptools()
     from setuptools import setup, find_packages
 
+import os
+THIS_DIR = os.path.dirname(__file__)
+
+
 setup(
     name =            	'MyProxyClient',
-    version =         	'1.3.1',
+    version =         	'1.4.0',
     description =     	'MyProxy Client',
-    long_description = 	'''\
-MyProxy Client Package
-======================
-This a pure* Python implementation of a client to the MyProxy Credential
-Management Server (http://grid.ncsa.uiuc.edu/myproxy/)
-
-* i.e. MyProxy C client libraries are not required for this package. 
-
-It uses pyOpenSSL to make an SSL connection to the server following the
-messaging interface as outlined in: http://grid.ncsa.uiuc.edu/myproxy/protocol/
-
-The code is based on an original program myproxy_logon by Tom Uram of ANL.
-
-Releases
-========
-1.3.1
------
- * Fix to MyProxyClient.writeProxyFile and MyProxyClient.readProxyFile to correctly pick-up overridden file setting.  Thanks to Nicolas Carenton, IPSL.
-
-Tests
-=====
-Unit test module with test files is in test/.  See the README in that directory.
-This package has been tested on Linux Ubuntu Gutsy Gibbon, and Windows XP
-Professional SP2
-
-Documentation
-=============
-Epydoc generated documentation is available in documentation/.  run the 
-Makefile to regenerate if required.
-
-Thanks
-======
- * to OMII-UK for funding development of NDG Security (2007-2008)
- * Tom Uram who wrote the myproxy_logon program on which this package is based.
-''',
+    long_description = 	open(os.path.join(THIS_DIR, 'README.md')).read(),
     author =          	'Philip Kershaw',
     author_email =    	'Philip.Kershaw@stfc.ac.uk',
     maintainer =        'Philip Kershaw',
     maintainer_email =  'Philip.Kershaw@stfc.ac.uk',
-    url =             	'http://proj.badc.rl.ac.uk/ndg/wiki/Security/MyProxyClient',
+    url =             	'https://github.com/cedadev/MyProxyClient',
     platforms =         ['POSIX', 'Linux', 'Windows'],
     install_requires =  ['PyOpenSSL'],
     license =           __license__,

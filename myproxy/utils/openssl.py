@@ -184,7 +184,7 @@ class OpenSSLConfig(SafeConfigParser, object):
 
         idx = re.search('\[\s*\w*\s*\]', fileTxt).span()[0]
         config_file.seek(idx)
-        SafeConfigParser.readfp(self, file)
+        SafeConfigParser.readfp(self, config_file)
         
         # Filter section names and remove comments from options
         for section, val in self._sections.items():
