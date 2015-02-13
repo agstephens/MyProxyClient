@@ -16,11 +16,11 @@
 
   \indexspace
   \bigletter H
-  \item hostname (myproxy.client.MyProxyClient attribute), \hyperpage{10}
+  \item hostname (myproxy.client.MyProxyClient attribute), \hyperpage{9}
 
   \indexspace
   \bigletter I
-  \item info() (myproxy.client.MyProxyClient method), \hyperpage{10}
+  \item info() (myproxy.client.MyProxyClient method), \hyperpage{9}
 
   \indexspace
   \bigletter L
@@ -46,7 +46,7 @@
 
   \indexspace
   \bigletter R
-  \item readProxyFile() (myproxy.client.MyProxyClient class method), \hyperpage{12}
+  \item readProxyFile() (myproxy.client.MyProxyClient class method), \hyperpage{11}
 
   \indexspace
   \bigletter S
@@ -57,6 +57,6 @@
 
   \indexspace
   \bigletter W
-  \item writeProxyFile() (myproxy.client.MyProxyClient class method), \hyperpage{13}
+  \item writeProxyFile() (myproxy.client.MyProxyClient class method), \hyperpage{12}
 
 \end{theindex}

@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="MyProxyClient 1.4.0 documentation" href="../../README.html" />
+    <link rel="top" title="MyProxyClient 1.4.0 documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" /> 
   </head>
   <body role="document">
@@ -33,7 +33,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li><a href="../../README.html">MyProxyClient 1.4.0 documentation</a> &raquo;</li>
+        <li><a href="../../index.html">MyProxyClient 1.4.0 documentation</a> &raquo;</li>
           <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -110,9 +110,9 @@
 <span class="sd">        setting</span>
 <span class="sd">        </span>
 <span class="sd">        :type certDN: string</span>
-<span class="sd">        :param certDN: Set the expected Distinguished Name of the</span>
-<span class="sd">        MyProxy server to avoid errors matching hostnames.  This is useful</span>
-<span class="sd">        where the hostname is not fully qualified</span>
+<span class="sd">        :param certDN: Set the expected Distinguished Name of the MyProxy \</span>
+<span class="sd">server to avoid errors matching hostnames.  This is useful where the hostname \</span>
+<span class="sd">is not fully qualified</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__certDN</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__hostname</span> <span class="o">=</span> <span class="bp">None</span>
@@ -130,24 +130,24 @@
 <span class="sd">        :type connection: OpenSSL.SSL.Connection</span>
 <span class="sd">        :param connection: SSL connection object</span>
 <span class="sd">        :type peerCert: basestring</span>
-<span class="sd">        :param peerCert: MyProxy server host certificate as OpenSSL.crypto.X509</span>
-<span class="sd">        instance</span>
+<span class="sd">        :param peerCert: MyProxy server host certificate as \</span>
+<span class="sd">OpenSSL.crypto.X509 instance</span>
 <span class="sd">        :type errorStatus: int</span>
-<span class="sd">        :param errorStatus: error status passed from caller.  This is the value</span>
-<span class="sd">        returned by the OpenSSL C function X509_STORE_CTX_get_error().  Look-up</span>
-<span class="sd">        x509_vfy.h in the OpenSSL source to get the meanings of the different</span>
-<span class="sd">        codes.  PyOpenSSL doesn&#39;t help you!</span>
+<span class="sd">        :param errorStatus: error status passed from caller.  This is the \</span>
+<span class="sd">value returned by the OpenSSL C function X509_STORE_CTX_get_error().  Look-up \</span>
+<span class="sd">x509_vfy.h in the OpenSSL source to get the meanings of the different \</span>
+<span class="sd">codes.  PyOpenSSL doesn&#39;t help you!</span>
 <span class="sd">        :type errorDepth: int</span>
-<span class="sd">        :param errorDepth: a non-negative integer representing where in the </span>
-<span class="sd">        certificate chain the error occurred. If it is zero it occured in the </span>
-<span class="sd">        end entity certificate, one if it is the certificate which signed the </span>
-<span class="sd">        end entity certificate and so on.</span>
+<span class="sd">        :param errorDepth: a non-negative integer representing where in the \</span>
+<span class="sd">certificate chain the error occurred. If it is zero it occured in the \</span>
+<span class="sd">end entity certificate, one if it is the certificate which signed the \</span>
+<span class="sd">end entity certificate and so on.</span>
 
 <span class="sd">        :type preverifyOK: int</span>
-<span class="sd">        :param preverifyOK: the error status - 0 = Error, 1 = OK of the current</span>
-<span class="sd">        SSL context irrespective of any verification checks done here.  If this</span>
-<span class="sd">        function yields an OK status, it should enforce the preverifyOK value</span>
-<span class="sd">        so that any error set upstream overrides and is honoured.</span>
+<span class="sd">        :param preverifyOK: the error status - 0 = Error, 1 = OK of the \</span>
+<span class="sd">current SSL context irrespective of any verification checks done here.  If \</span>
+<span class="sd">this function yields an OK status, it should enforce the preverifyOK value \</span>
+<span class="sd">so that any error set upstream overrides and is honoured.</span>
 <span class="sd">        :rtype: int</span>
 <span class="sd">        :return: status code - 0/False = Error, 1/True = OK</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -278,8 +278,8 @@
 <span class="sd">    http://grid.ncsa.uiuc.edu/myproxy/protocol/</span>
 
 <span class="sd">    :type SSL_METHOD: string</span>
-<span class="sd">    :cvar SSL_METHOD: encryption method used for connecting to MyProxy server</span>
-<span class="sd">    - set to TLS version 1</span>
+<span class="sd">    :cvar SSL_METHOD: encryption method used for connecting to MyProxy server \</span>
+<span class="sd">- set to TLS version 1</span>
 <span class="sd">    </span>
 <span class="sd">    :type MYPROXY_SERVER_ENVVARNAME: string</span>
 <span class="sd">    :cvar MYPROXY_SERVER_ENVVARNAME: server environment variable name</span>
@@ -288,12 +288,12 @@
 <span class="sd">    :cvar MYPROXY_SERVER_PORT_ENVVARNAME: port environment variable name</span>
 <span class="sd">    </span>
 <span class="sd">    :type MYPROXY_SERVER_DN_ENVVARNAME: string</span>
-<span class="sd">    :cvar MYPROXY_SERVER_DN_ENVVARNAME: server certificate Distinguished Name</span>
-<span class="sd">    environment variable name</span>
+<span class="sd">    :cvar MYPROXY_SERVER_DN_ENVVARNAME: server certificate Distinguished Name \</span>
+<span class="sd">environment variable name</span>
 <span class="sd">    </span>
 <span class="sd">    :type GLOBUS_LOCATION_ENVVARNAME: string</span>
-<span class="sd">    :param GLOBUS_LOCATION_ENVVARNAME: &#39;GLOBUS_LOCATION&#39; environment variable</span>
-<span class="sd">    name</span>
+<span class="sd">    :cvar GLOBUS_LOCATION_ENVVARNAME: &#39;GLOBUS_LOCATION&#39; environment variable \</span>
+<span class="sd">name</span>
 <span class="sd">    </span>
 <span class="sd">    :type GET_CMD: string</span>
 <span class="sd">    :cvar GET_CMD: get command string</span>
@@ -314,13 +314,13 @@
 <span class="sd">    :cvar GET_TRUST_ROOTS_CMD: get trust roots command string</span>
 <span class="sd">    </span>
 <span class="sd">    :type TRUSTED_CERTS_FIELDNAME: string</span>
-<span class="sd">    :param TRUSTED_CERTS_FIELDNAME: field name in get trust roots response for</span>
-<span class="sd">    trusted certificate file names</span>
+<span class="sd">    :cvar TRUSTED_CERTS_FIELDNAME: field name in get trust roots response \</span>
+<span class="sd">    for trusted certificate file names</span>
 <span class="sd">    </span>
 <span class="sd">    :type TRUSTED_CERTS_FILEDATA_FIELDNAME_PREFIX: string</span>
-<span class="sd">    :param TRUSTED_CERTS_FILEDATA_FIELDNAME_PREFIX: field name prefix in get </span>
-<span class="sd">    trust roots response for trusted certificate file contents</span>
-<span class="sd">    </span>
+<span class="sd">    :cvar TRUSTED_CERTS_FILEDATA_FIELDNAME_PREFIX: field name prefix in get \</span>
+<span class="sd">trust roots response for trusted certificate file contents</span>
+
 <span class="sd">    :type HOSTCERT_SUBDIRPATH: string</span>
 <span class="sd">    :cvar HOSTCERT_SUBDIRPATH: sub-directory path host certificate (as tuple)</span>
 <span class="sd">    </span>
@@ -337,41 +337,41 @@
 <span class="sd">    :cvar SERVER_RESP_BLK_SIZE: block size for retrievals from server</span>
 <span class="sd">    </span>
 <span class="sd">    :type MAX_RECV_TRIES: int</span>
-<span class="sd">    :cvar MAX_RECV_TRIES: maximum number of retrievals of size </span>
-<span class="sd">    SERVER_RESP_BLK_SIZE before this client gives up</span>
-<span class="sd">    </span>
+<span class="sd">    :cvar MAX_RECV_TRIES: maximum number of retrievals of size \</span>
+<span class="sd">SERVER_RESP_BLK_SIZE before this client gives up</span>
+
 <span class="sd">    :type DEF_PROXY_FILEPATH: string</span>
 <span class="sd">    :cvar DEF_PROXY_FILEPATH: default location for proxy file to be written to</span>
 <span class="sd">    </span>
 <span class="sd">    :type PROXY_FILE_PERMISSIONS: int</span>
-<span class="sd">    :cvar PROXY_FILE_PERMISSIONS: file permissions returned proxy file is </span>
-<span class="sd">    created with</span>
-<span class="sd">    </span>
+<span class="sd">    :cvar PROXY_FILE_PERMISSIONS: file permissions returned proxy file is \</span>
+<span class="sd">created with</span>
+
 <span class="sd">    :type PROPERTY_DEFAULTS: tuple</span>
-<span class="sd">    :cvar PROPERTY_DEFAULTS: sets permissable element names for MyProxy config </span>
+<span class="sd">    :cvar PROPERTY_DEFAULTS: sets permissible element names for MyProxy config \</span>
 <span class="sd">    file</span>
 
 <span class="sd">    :type ROOT_USERNAME: string</span>
-<span class="sd">    :cvar ROOT_USERNAME: root username - used to determine output directory</span>
+<span class="sd">    :cvar ROOT_USERNAME: root username - used to determine output directory \</span>
 <span class="sd">    for trust roots</span>
 
 <span class="sd">    :type ROOT_TRUSTROOT_DIR: string</span>
-<span class="sd">    :cvar ROOT_TRUSTROOT_DIR: default trust root directory if running as root</span>
-<span class="sd">    user </span>
+<span class="sd">    :cvar ROOT_TRUSTROOT_DIR: default trust root directory if running as root \</span>
+<span class="sd">user </span>
 
 <span class="sd">    :type USER_TRUSTROOT_DIR: string</span>
-<span class="sd">    :cvar USER_TRUSTROOT_DIR: default trust root directory for users other</span>
-<span class="sd">    than root</span>
+<span class="sd">    :cvar USER_TRUSTROOT_DIR: default trust root directory for users other \</span>
+<span class="sd">than root</span>
 <span class="sd">    </span>
 <span class="sd">    :type X509_CERT_DIR_ENVVARNAME: string</span>
-<span class="sd">    :cvar X509_CERT_DIR_ENVVARNAME: environment variable name &#39;X509_CERT_DIR&#39;,</span>
+<span class="sd">    :cvar X509_CERT_DIR_ENVVARNAME: environment variable name &#39;X509_CERT_DIR&#39;, \</span>
 <span class="sd">    which if set points to the location of the trust roots </span>
 <span class="sd">    </span>
 <span class="sd">    :type X509_USER_PROXY_ENVVARNAME: string</span>
-<span class="sd">    :cvar X509_USER_PROXY_ENVVARNAME: environment variable name </span>
-<span class="sd">    &#39;X509_USER_PROXY&#39; if set points to the output location of the output EEC /</span>
-<span class="sd">    Proxy certificate.  Not currently used by this class, included for</span>
-<span class="sd">    reference only</span>
+<span class="sd">    :cvar X509_USER_PROXY_ENVVARNAME: environment variable name \</span>
+<span class="sd">&#39;X509_USER_PROXY&#39; if set points to the output location of the output EEC / \</span>
+<span class="sd">Proxy certificate.  Not currently used by this class, included for \</span>
+<span class="sd">reference only</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c"># Parametise SSL METHOD to allow later update if needed - set to TLSv1 to</span>
@@ -748,20 +748,20 @@
 <span class="sd">        server side identity checks</span>
 <span class="sd">        </span>
 <span class="sd">        :type sslCertFile: basestring</span>
-<span class="sd">        :param sslCertFile: certificate for SSL client authentication.  It may</span>
-<span class="sd">        be owner of a credential to be acted on or the concatenated proxy </span>
-<span class="sd">        certificate + proxy&#39;s signing cert.  SSL client authentication is not </span>
-<span class="sd">        necessary for getDelegation / logon calls</span>
+<span class="sd">        :param sslCertFile: certificate for SSL client authentication.  It may \</span>
+<span class="sd">be owner of a credential to be acted on or the concatenated proxy \</span>
+<span class="sd">certificate + proxy&#39;s signing cert.  SSL client authentication is not \</span>
+<span class="sd">necessary for getDelegation / logon calls</span>
 <span class="sd">        :type sslKeyFile: basestring</span>
 <span class="sd">        :param sslKeyFile: client private key file</span>
 <span class="sd">        :type keyFilePassphrase: basestring</span>
-<span class="sd">        :param keyFilePassphrase: pass-phrase protecting private key if set</span>
+<span class="sd">        :param keyFilePassphrase: pass-phrase protecting private key if set \</span>
 <span class="sd">        :type verifyPeerWithTrustRoots: bool</span>
-<span class="sd">        :param verifyPeerWithTrustRoots: verify MyProxy server&#39;s SSL certificate</span>
-<span class="sd">        against a list of trusted CA certificates in the CA certificate </span>
-<span class="sd">        directory set by the &quot;CaCertDir&quot; attribute.  This should always be set </span>
-<span class="sd">        to True for MyProxy client calls unless using the &#39;bootstrap&#39; trust</span>
-<span class="sd">        roots mode available with logon and get trust roots calls</span>
+<span class="sd">        :param verifyPeerWithTrustRoots: verify MyProxy server&#39;s SSL certificate \</span>
+<span class="sd">against a list of trusted CA certificates in the CA certificate \</span>
+<span class="sd">directory set by the &quot;CaCertDir&quot; attribute.  This should always be set \</span>
+<span class="sd">to True for MyProxy client calls unless using the &#39;bootstrap&#39; trust \</span>
+<span class="sd">roots mode available with logon and get trust roots calls</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">context</span> <span class="o">=</span> <span class="n">SSL</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">SSL_METHOD</span><span class="p">)</span>
         
@@ -813,7 +813,7 @@
     <span class="k">def</span> <span class="nf">_createKeyPair</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nBitsForKey</span><span class="o">=</span><span class="n">PRIKEY_NBITS</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generate key pair and return as PEM encoded string</span>
 <span class="sd">        :type nBitsForKey: int</span>
-<span class="sd">        :param nBitsForKey: number of bits for private key generation - </span>
+<span class="sd">        :param nBitsForKey: number of bits for private key generation - \</span>
 <span class="sd">        default is 2048</span>
 <span class="sd">        :rtype: OpenSSL.crypto.PKey</span>
 <span class="sd">        :return: public/private key pair</span>
@@ -827,7 +827,7 @@
         <span class="sd">&quot;&quot;&quot;Create a certificate request.</span>
 <span class="sd">        </span>
 <span class="sd">        :type CN: basestring</span>
-<span class="sd">        :param CN: Common Name for certificate - effectively the same as the</span>
+<span class="sd">        :param CN: Common Name for certificate - effectively the same as the \</span>
 <span class="sd">        username for the MyProxy credential</span>
 <span class="sd">        :type keyPair: string/None</span>
 <span class="sd">        :param keyPair: public/private key pair</span>
@@ -857,9 +857,9 @@
 <span class="sd">        Deserialize a MyProxy server response</span>
 <span class="sd">        </span>
 <span class="sd">        :param msg: string response message from MyProxy server</span>
-<span class="sd">        :return: tuple of integer response and errorTxt string (if any) and all </span>
-<span class="sd">        the fields parsed.  fields is a list of two element, field name, field </span>
-<span class="sd">        value tuples.</span>
+<span class="sd">        :return: tuple of integer response and errorTxt string (if any) and \ </span>
+<span class="sd">all the fields parsed.  fields is a list of two element, field name, field \</span>
+<span class="sd">value tuples.</span>
 <span class="sd">        :rtype: tuple</span>
 <span class="sd">        &quot;&quot;&quot;</span>  
         <span class="n">lines</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
@@ -896,7 +896,7 @@
 <span class="sd">        :param inputDat: string containing the proxy cert and private key</span>
 <span class="sd">        and signing cert all in DER format</span>
 <span class="sd">        </span>
-<span class="sd">        :return list containing the equivalent to the input in PEM format&quot;&quot;&quot;</span>
+<span class="sd">        :return: list containing the equivalent to the input in PEM format&quot;&quot;&quot;</span>
         <span class="n">pemCerts</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">dat</span> <span class="o">=</span> <span class="n">inputDat</span>
         
@@ -925,11 +925,11 @@
 <span class="sd">        authenticate with the server based on the various default locations</span>
 <span class="sd">        that MyProxy/Globus support</span>
 <span class="sd">        </span>
-<span class="sd">        :param enableTmpFileLoc: enable setting based on /tmp/x509up_&lt;uid&gt;,</span>
-<span class="sd">        defaults to False</span>
+<span class="sd">        :param enableTmpFileLoc: enable setting based on /tmp/x509up_&lt;uid&gt;, \</span>
+<span class="sd">defaults to False</span>
 <span class="sd">        :type enableTmpFileLoc: bool</span>
-<span class="sd">        :return: private key and certificate file location to use based on the</span>
-<span class="sd">        current environment</span>
+<span class="sd">        :return: private key and certificate file location to use based on the \</span>
+<span class="sd">current environment</span>
 <span class="sd">        :rtype: tuple</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">sslKeyFile</span> <span class="o">=</span> <span class="bp">None</span>
@@ -1042,27 +1042,27 @@
 <span class="sd">        :type username: string</span>
 <span class="sd">        :param username: username selected for new credential</span>
 <span class="sd">        :type passphrase: string</span>
-<span class="sd">        :param passphrase: pass-phrase for new credential.  This will be used </span>
-<span class="sd">        by the server to authenticate later requests.  IT must be at least</span>
-<span class="sd">        6 characters.  The server may impose other restrictions too depending</span>
-<span class="sd">        on its configuration.</span>
+<span class="sd">        :param passphrase: pass-phrase for new credential.  This will be used \</span>
+<span class="sd">by the server to authenticate later requests.  It must be at least \</span>
+<span class="sd">6 characters.  The server may impose other restrictions too depending \</span>
+<span class="sd">on its configuration.</span>
 <span class="sd">        :type certFile: string</span>
 <span class="sd">        :param certFile: user&#39;s X.509 proxy certificate in PEM format</span>
 <span class="sd">        :type keyFile: string</span>
 <span class="sd">        :param keyFile: equivalent private key file in PEM format</span>
 <span class="sd">        :type sslCertFile: string</span>
-<span class="sd">        :param sslCertFile: certificate used for client authentication with</span>
-<span class="sd">        the MyProxy server SSL connection.  If not set,</span>
-<span class="sd">        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem </span>
+<span class="sd">        :param sslCertFile: certificate used for client authentication with \</span>
+<span class="sd">the MyProxy server SSL connection.  If not set, \</span>
+<span class="sd">this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem </span>
 <span class="sd">        :type sslKeyFile: string</span>
-<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation</span>
-<span class="sd">        for sslCertFile</span>
+<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation \</span>
+<span class="sd">for sslCertFile</span>
 <span class="sd">        :type sslKeyFilePassphrase: string </span>
-<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the</span>
+<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \</span>
 <span class="sd">        private key is not password protected.  </span>
 <span class="sd">        :type lifetime: int / None</span>
-<span class="sd">        :param lifetime: the maximum lifetime allowed for retrieved proxy </span>
-<span class="sd">        credentials in seconds. defaults to proxyCertMaxLifetime attribute value</span>
+<span class="sd">        :param lifetime: the maximum lifetime allowed for retrieved proxy \</span>
+<span class="sd">credentials in seconds. defaults to proxyCertMaxLifetime attribute value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&#39;put method is not currently implemented.  &#39;</span>
                                   <span class="s">&#39;It requires the creation of a proxy &#39;</span>
@@ -1084,17 +1084,17 @@
 <span class="sd">        :type username: string</span>
 <span class="sd">        :param username: username selected for credential</span>
 <span class="sd">        :type sslCertFile: string</span>
-<span class="sd">        :param sslCertFile: certificate used for client authentication with</span>
-<span class="sd">        the MyProxy server SSL connection.  This ID will be set as the owner</span>
-<span class="sd">        of the stored credentials.  Only the owner can later remove </span>
-<span class="sd">        credentials with myproxy-destroy or the destroy method.  If not set,</span>
-<span class="sd">        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem </span>
+<span class="sd">        :param sslCertFile: certificate used for client authentication with \</span>
+<span class="sd">the MyProxy server SSL connection.  This ID will be set as the owner of the \</span>
+<span class="sd">stored credentials.  Only the owner can later remove credentials with \</span>
+<span class="sd">myproxy-destroy or the destroy method.  If not set, this argument defaults to \</span>
+<span class="sd">$GLOBUS_LOCATION/etc/hostcert.pem </span>
 <span class="sd">        :type sslKeyFile: string </span>
-<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation</span>
-<span class="sd">        for sslCertFile</span>
+<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation \</span>
+<span class="sd">for sslCertFile</span>
 <span class="sd">        :type sslKeyFilePassphrase: string</span>
-<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the</span>
-<span class="sd">        private key is not password protected.</span>
+<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \</span>
+<span class="sd">private key is not password protected.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">globusLoc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">MyProxyClient</span><span class="o">.</span><span class="n">GLOBUS_LOCATION_ENVVARNAME</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">sslCertFile</span><span class="p">:</span>
@@ -1147,19 +1147,19 @@
 <span class="sd">        :param username: username of credential</span>
 <span class="sd">        :param passphrase: existing pass-phrase for credential</span>
 <span class="sd">        :param newPassphrase: new pass-phrase to replace the existing one.</span>
-<span class="sd">        :param sslCertFile: certificate used for client authentication with</span>
-<span class="sd">        the MyProxy server SSL connection.  This ID will be set as the owner</span>
-<span class="sd">        of the stored credentials.  Only the owner can later remove </span>
-<span class="sd">        credentials with myproxy-destroy or the destroy method.  If not set,</span>
-<span class="sd">        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem </span>
+<span class="sd">        :param sslCertFile: certificate used for client authentication with \</span>
+<span class="sd">the MyProxy server SSL connection.  This ID will be set as the owner \</span>
+<span class="sd">of the stored credentials.  Only the owner can later remove \</span>
+<span class="sd">credentials with myproxy-destroy or the destroy method.  If not set, \</span>
+<span class="sd">this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem </span>
 <span class="sd">        </span>
-<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation</span>
-<span class="sd">        for sslCertFile</span>
+<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation \</span>
+<span class="sd">for sslCertFile</span>
 <span class="sd">        </span>
-<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the</span>
-<span class="sd">        private key is not password protected.  </span>
+<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \</span>
+<span class="sd">private key is not password protected.  </span>
 <span class="sd">        </span>
-<span class="sd">        :return none</span>
+<span class="sd">        :return: none</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">globusLoc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">MyProxyClient</span><span class="o">.</span><span class="n">GLOBUS_LOCATION_ENVVARNAME</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">sslCertFile</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">sslKeyFile</span><span class="p">:</span>
@@ -1206,16 +1206,16 @@
 <span class="sd">        :raise MyProxyClientRetrieveError:</span>
 <span class="sd">        </span>
 <span class="sd">        :param username: username selected for credential</span>
-<span class="sd">        :param sslCertFile: certificate used for client authentication with</span>
-<span class="sd">        the MyProxy server SSL connection.  This ID will be set as the owner</span>
-<span class="sd">        of the stored credentials.  Only the owner can later remove </span>
-<span class="sd">        credentials with myproxy-destroy or the destroy method.  If not set,</span>
-<span class="sd">        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem </span>
-<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation</span>
-<span class="sd">        for sslCertFile</span>
-<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the</span>
-<span class="sd">        private key is not password protected.  </span>
-<span class="sd">        :return none</span>
+<span class="sd">        :param sslCertFile: certificate used for client authentication with \</span>
+<span class="sd">the MyProxy server SSL connection.  This ID will be set as the owner \</span>
+<span class="sd">of the stored credentials.  Only the owner can later remove \</span>
+<span class="sd">credentials with myproxy-destroy or the destroy method.  If not set, \</span>
+<span class="sd">this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem </span>
+<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation \</span>
+<span class="sd">for sslCertFile</span>
+<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \</span>
+<span class="sd">private key is not password protected.  </span>
+<span class="sd">        :return: none</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">globusLoc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">MyProxyClient</span><span class="o">.</span><span class="n">GLOBUS_LOCATION_ENVVARNAME</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">sslCertFile</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">sslKeyFile</span><span class="p">:</span>
@@ -1267,32 +1267,32 @@
 <span class="sd">        :type username: string</span>
 <span class="sd">        :param username: username selected for new credential</span>
 <span class="sd">        :type passphrase: string</span>
-<span class="sd">        :param passphrase: pass-phrase for new credential.  This is the pass </span>
-<span class="sd">        phrase which protects keyfile.</span>
+<span class="sd">        :param passphrase: pass-phrase for new credential.  This is the pass \</span>
+<span class="sd">phrase which protects keyfile.</span>
 <span class="sd">        </span>
 <span class="sd">        :type certFile: string</span>
 <span class="sd">        :param certFile: user&#39;s X.509 certificate in PEM format</span>
 <span class="sd">        :type keyFile: string</span>
 <span class="sd">        :param keyFile: equivalent private key file in PEM format</span>
 <span class="sd">        :type sslCertFile: string</span>
-<span class="sd">        :param sslCertFile: certificate used for client authentication with</span>
-<span class="sd">        the MyProxy server SSL connection.  This ID will be set as the owner</span>
-<span class="sd">        of the stored credentials.  Only the owner can later remove </span>
-<span class="sd">        credentials with myproxy-destroy or the destroy method.  If not set,</span>
-<span class="sd">        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem or if this</span>
-<span class="sd">        is not set, certFile</span>
+<span class="sd">        :param sslCertFile: certificate used for client authentication with \</span>
+<span class="sd">the MyProxy server SSL connection.  This ID will be set as the owner \</span>
+<span class="sd">of the stored credentials.  Only the owner can later remove \</span>
+<span class="sd">credentials with myproxy-destroy or the destroy method.  If not set, \</span>
+<span class="sd">this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem or if this \</span>
+<span class="sd">is not set, certFile</span>
 <span class="sd">        :type sslKeyFile: string</span>
-<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation</span>
-<span class="sd">        for sslCertFile</span>
+<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation \</span>
+<span class="sd">for sslCertFile</span>
 <span class="sd">        :type sslKeyFilePassphrase: string </span>
-<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the</span>
-<span class="sd">        private key is not password protected.  Nb. keyFile is expected to</span>
-<span class="sd">        be passphrase protected as this will be the passphrase used for</span>
-<span class="sd">        logon / getDelegation.</span>
+<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \</span>
+<span class="sd">private key is not password protected.  Nb. keyFile is expected to \</span>
+<span class="sd">be passphrase protected as this will be the passphrase used for \</span>
+<span class="sd">logon / getDelegation.</span>
 <span class="sd">        :type Force: bool</span>
-<span class="sd">        :param force: set to True to overwrite any existing creds with the</span>
-<span class="sd">        same username.  If, force=False a check is made with a call to info.</span>
-<span class="sd">        If creds already, exist exit without proceeding</span>
+<span class="sd">        :param force: set to True to overwrite any existing creds with the \</span>
+<span class="sd">same username.  If, force=False a check is made with a call to info. \</span>
+<span class="sd">If creds already, exist exit without proceeding</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="n">lifetime</span> <span class="o">=</span> <span class="n">lifetime</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxyCertMaxLifetime</span>
@@ -1383,61 +1383,61 @@
 <span class="sd">        :param username: username of credential</span>
 <span class="sd">        </span>
 <span class="sd">        :type passphrase: basestring</span>
-<span class="sd">        :param passphrase: pass-phrase for private key of credential held on</span>
-<span class="sd">        server</span>
+<span class="sd">        :param passphrase: pass-phrase for private key of credential held on \</span>
+<span class="sd">server</span>
 <span class="sd">        </span>
 <span class="sd">        :type credname: string / None type</span>
-<span class="sd">        :param credname: optional credential name - provides additional means</span>
+<span class="sd">        :param credname: optional credential name - provides additional means \</span>
 <span class="sd">        to specify credential to be retrieved</span>
 <span class="sd">        </span>
 <span class="sd">        :type lifetime: int</span>
 <span class="sd">        :param lifetime: lifetime for generated certificate</span>
 <span class="sd">        </span>
 <span class="sd">        :type keyPair: OpenSSL.crypto.PKey</span>
-<span class="sd">        :param keyPair: Public/Private key pair.  This is ignored if a </span>
+<span class="sd">        :param keyPair: Public/Private key pair.  This is ignored if a \</span>
 <span class="sd">        certificate request is passed via the certReq keyword</span>
 <span class="sd">        </span>
 <span class="sd">        :type certReq: string</span>
-<span class="sd">        :param certReq: ASN1 format certificate request, if none set, one is </span>
+<span class="sd">        :param certReq: ASN1 format certificate request, if none set, one is \</span>
 <span class="sd">        created along with a key pair</span>
 <span class="sd">        </span>
 <span class="sd">        :type nBitsForKey: int</span>
-<span class="sd">        :param nBitsForKey: number of bits to use when generating key pair,</span>
-<span class="sd">        defaults to the PRIKEY_NBITS class variable setting.  This keyword is</span>
-<span class="sd">        ignored if a key pair is passed in from an external source via the</span>
-<span class="sd">        keyPair keyword</span>
+<span class="sd">        :param nBitsForKey: number of bits to use when generating key pair, \</span>
+<span class="sd">defaults to the PRIKEY_NBITS class variable setting.  This keyword is \</span>
+<span class="sd">ignored if a key pair is passed in from an external source via the keyPair \</span>
+<span class="sd">keyword</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype: tuple</span>
-<span class="sd">        :return credentials as strings in PEM format: the</span>
-<span class="sd">        user certificate, it&#39;s private key and the issuing certificate.  The</span>
-<span class="sd">        issuing certificate is only set if the user certificate is a proxy</span>
+<span class="sd">        :return: credentials as strings in PEM format: the user certificate, \</span>
+<span class="sd">its private key and the issuing certificate.  The issuing certificate is only \</span>
+<span class="sd">set if the user certificate is a proxy</span>
 <span class="sd">        </span>
 <span class="sd">        :type bootstrap: bool</span>
-<span class="sd">        :param bootstrap: If set to True, bootstrap trust roots i.e. connect to</span>
-<span class="sd">        MyProxy server without verification of the server&#39;s SSL certificate</span>
-<span class="sd">        against any CA certificates.  Set to False, for default behaviour:</span>
-<span class="sd">        verify server SSL certificate against CA certificates held in location</span>
-<span class="sd">        set by the &quot;caCertDir&quot; attribute.  If bootstrap is set, updateTrustRoots</span>
-<span class="sd">        will be forced to True also</span>
+<span class="sd">        :param bootstrap: If set to True, bootstrap trust roots i.e. connect \</span>
+<span class="sd">to MyProxy server without verification of the server&#39;s SSL certificate \</span>
+<span class="sd">against any CA certificates.  Set to False, for default behaviour: \</span>
+<span class="sd">verify server SSL certificate against CA certificates held in location \</span>
+<span class="sd">set by the &quot;caCertDir&quot; attribute.  If bootstrap is set, updateTrustRoots \</span>
+<span class="sd">will be forced to True also</span>
 <span class="sd">        </span>
 <span class="sd">        :type updateTrustRoots: bool</span>
 <span class="sd">        :param updateTrustRoots: set to True to update the trust roots</span>
 <span class="sd">        </span>
 <span class="sd">        :type authnGetTrustRootsCall: bool</span>
-<span class="sd">        :param authnGetTrustRootsCall: pass username and password to </span>
-<span class="sd">        getTrustRoots call.  getTrustRoots is invoked if the &quot;updateTrustRoots&quot;</span>
-<span class="sd">        or &quot;bootstrap&quot; keywords are set.  This is not recommended for </span>
-<span class="sd">        bootstrap since in this case the server is NOT authenticated by this </span>
-<span class="sd">        client. </span>
+<span class="sd">        :param authnGetTrustRootsCall: pass username and password to \</span>
+<span class="sd">getTrustRoots call.  getTrustRoots is invoked if the \</span>
+<span class="sd">&quot;updateTrustRoots&quot; or &quot;bootstrap&quot; keywords are set.  This is not recommended \</span>
+<span class="sd">for bootstrap since in this case the server is NOT authenticated by this \</span>
+<span class="sd">client. </span>
 <span class="sd">        </span>
-<span class="sd">        :param sslCertFile: applies to SSL client based authentication - </span>
-<span class="sd">        alternative to username/pass-phrase based.  This certificate is used for </span>
-<span class="sd">        authentication with MyProxy server over the SSL connection.  If not set,</span>
-<span class="sd">        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem </span>
-<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation</span>
-<span class="sd">        for sslCertFile</span>
-<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the</span>
-<span class="sd">        private key is not password protected.  </span>
+<span class="sd">        :param sslCertFile: applies to SSL client based authentication - \</span>
+<span class="sd">alternative to username/pass-phrase based.  This certificate is used for \</span>
+<span class="sd">authentication with MyProxy server over the SSL connection.  If not set, \</span>
+<span class="sd">this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem </span>
+<span class="sd">        :param sslKeyFile: corresponding private key file.  See explanation \</span>
+<span class="sd">for sslCertFile</span>
+<span class="sd">        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \</span>
+<span class="sd">private key is not password protected.  </span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">bootstrap</span><span class="p">:</span>
             <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&#39;Bootstrapping MyProxy server root of trust.&#39;</span><span class="p">)</span>
@@ -1583,21 +1583,20 @@
 <span class="sd">        </span>
 <span class="sd">        :type passphrase: basestring</span>
 <span class="sd">        :param passphrase: pass-phrase (optional)</span>
-<span class="sd">        server</span>
 <span class="sd">        </span>
 <span class="sd">        :type writeToCACertDir: bool</span>
-<span class="sd">        :param writeToCACertDir: if set to True, write the retrieved trust roots</span>
-<span class="sd">        out to the directory specified by the &quot;caCertDir&quot; attribute</span>
+<span class="sd">        :param writeToCACertDir: if set to True, write the retrieved trust \</span>
+<span class="sd">roots out to the directory specified by the &quot;caCertDir&quot; attribute</span>
 <span class="sd">        </span>
 <span class="sd">        :type bootstrap: bool</span>
-<span class="sd">        :param bootstrap: If set to True, bootstrap trust roots i.e. connect to</span>
-<span class="sd">        MyProxy server without verification of the server&#39;s SSL certificate</span>
-<span class="sd">        against any CA certificates.  Set to False, for default behaviour:</span>
-<span class="sd">        verify server SSL certificate against CA certificates held in location</span>
-<span class="sd">        set by the &quot;caCertDir&quot; attribute.</span>
+<span class="sd">        :param bootstrap: If set to True, bootstrap trust roots i.e. connect \</span>
+<span class="sd">to MyProxy server without verification of the server&#39;s SSL certificate \</span>
+<span class="sd">against any CA certificates.  Set to False, for default behaviour: \</span>
+<span class="sd">verify server SSL certificate against CA certificates held in location \</span>
+<span class="sd">set by the &quot;caCertDir&quot; attribute.</span>
 <span class="sd">        </span>
-<span class="sd">        :return: trust root files as a dictionary keyed by file name with each </span>
-<span class="sd">        item value set to the file contents</span>
+<span class="sd">        :return: trust root files as a dictionary keyed by file name with each \</span>
+<span class="sd">item value set to the file contents</span>
 <span class="sd">        :rtype: dict</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">bootstrap</span><span class="p">:</span>
@@ -1687,7 +1686,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li><a href="../../README.html">MyProxyClient 1.4.0 documentation</a> &raquo;</li>
+        <li><a href="../../index.html">MyProxyClient 1.4.0 documentation</a> &raquo;</li>
           <li><a href="../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>

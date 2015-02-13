@@ -21,9 +21,9 @@ Examples
 These show how to retrieve a certificate bootstrapping trust in remote service.
 
 API:
->>> from myproxy.client import MyProxyClient
->>> myproxy_clnt = MyProxyClient(hostname="myproxy.somewhere.ac.uk")
->>> cert, private_key = myproxy_clnt.logon(username, password, bootstrap=True)
+	>>> from myproxy.client import MyProxyClient
+	>>> myproxy_clnt = MyProxyClient(hostname="myproxy.somewhere.ac.uk")
+	>>> cert, private_key = myproxy_clnt.logon(username, password, bootstrap=True)
 
 Command line interface:
 
@@ -31,7 +31,7 @@ Command line interface:
 
 Releases
 --------
-1.4.0
+1.4.1
 
  * Fix for SSL to use TLS instead of SSLv3 to address POODLE vulnerability
  * Fix for SSL verification for PyOpenSSL version 0.14 - v1.3.1 was broken

@@ -23,8 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="MyProxyClient 1.4.0 documentation" href="README.html" />
-    <link rel="prev" title="MyProxy Client Package" href="README.html" /> 
+    <link rel="top" title="MyProxyClient 1.4.0 documentation" href="index.html" />
+    <link rel="prev" title="MyProxy Client Package" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -34,9 +34,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="README.html" title="MyProxy Client Package"
+          <a href="index.html" title="MyProxy Client Package"
              accesskey="P">previous</a> |</li>
-        <li><a href="README.html">MyProxyClient 1.4.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">MyProxyClient 1.4.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -58,151 +58,39 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>SSL_METHOD</strong> &#8211; encryption method used for connecting to MyProxy server</td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
-<li>set to TLS version 1</li>
-</ul>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>SSL_METHOD</strong> &#8211; encryption method used for connecting to MyProxy server - set to TLS version 1</li>
 <li><strong>MYPROXY_SERVER_ENVVARNAME</strong> &#8211; server environment variable name</li>
 <li><strong>MYPROXY_SERVER_PORT_ENVVARNAME</strong> &#8211; port environment variable name</li>
-<li><strong>MYPROXY_SERVER_DN_ENVVARNAME</strong> &#8211; server certificate Distinguished Name</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p>environment variable name</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>GLOBUS_LOCATION_ENVVARNAME</strong> (<em>string</em>) &#8211; &#8216;GLOBUS_LOCATION&#8217; environment variable</td>
-</tr>
-</tbody>
-</table>
-<p>name</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first simple">
+<li><strong>MYPROXY_SERVER_DN_ENVVARNAME</strong> &#8211; server certificate Distinguished Name environment variable name</li>
+<li><strong>GLOBUS_LOCATION_ENVVARNAME</strong> &#8211; &#8216;GLOBUS_LOCATION&#8217; environment variable name</li>
 <li><strong>GET_CMD</strong> &#8211; get command string</li>
 <li><strong>INFO_CMD</strong> &#8211; info command string</li>
 <li><strong>DESTROY_CMD</strong> &#8211; destroy command string</li>
 <li><strong>CHANGE_PASSPHRASE_CMD</strong> &#8211; command string to change cred pass-phrase</li>
 <li><strong>STORE_CMD</strong> &#8211; store command string</li>
 <li><strong>GET_TRUST_ROOTS_CMD</strong> &#8211; get trust roots command string</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first last"><strong>TRUSTED_CERTS_FIELDNAME</strong> (<em>string</em>) &#8211; field name in get trust roots response for</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>trusted certificate file names</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>TRUSTED_CERTS_FILEDATA_FIELDNAME_PREFIX</strong> (<em>string</em>) &#8211; field name prefix in get</td>
-</tr>
-</tbody>
-</table>
-<p>trust roots response for trusted certificate file contents</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>TRUSTED_CERTS_FIELDNAME</strong> &#8211; field name in get trust roots response     for trusted certificate file names</li>
+<li><strong>TRUSTED_CERTS_FILEDATA_FIELDNAME_PREFIX</strong> &#8211; field name prefix in get trust roots response for trusted certificate file contents</li>
 <li><strong>HOSTCERT_SUBDIRPATH</strong> &#8211; sub-directory path host certificate (as tuple)</li>
 <li><strong>HOSTKEY_SUBDIRPATH</strong> &#8211; sub-directory path to host key (as tuple)</li>
 <li><strong>PRIKEY_NBITS</strong> &#8211; default number of bits for private key generated</li>
 <li><strong>MESSAGE_DIGEST_TYPE</strong> &#8211; message digest type is MD5</li>
 <li><strong>SERVER_RESP_BLK_SIZE</strong> &#8211; block size for retrievals from server</li>
-<li><strong>MAX_RECV_TRIES</strong> &#8211; maximum number of retrievals of size</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p>SERVER_RESP_BLK_SIZE before this client gives up</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>MAX_RECV_TRIES</strong> &#8211; maximum number of retrievals of size SERVER_RESP_BLK_SIZE before this client gives up</li>
 <li><strong>DEF_PROXY_FILEPATH</strong> &#8211; default location for proxy file to be written to</li>
-<li><strong>PROXY_FILE_PERMISSIONS</strong> &#8211; file permissions returned proxy file is</li>
+<li><strong>PROXY_FILE_PERMISSIONS</strong> &#8211; file permissions returned proxy file is created with</li>
+<li><strong>PROPERTY_DEFAULTS</strong> &#8211; sets permissible element names for MyProxy config     file</li>
+<li><strong>ROOT_USERNAME</strong> &#8211; root username - used to determine output directory     for trust roots</li>
+<li><strong>ROOT_TRUSTROOT_DIR</strong> &#8211; default trust root directory if running as root user</li>
+<li><strong>USER_TRUSTROOT_DIR</strong> &#8211; default trust root directory for users other than root</li>
+<li><strong>X509_CERT_DIR_ENVVARNAME</strong> &#8211; environment variable name &#8216;X509_CERT_DIR&#8217;,     which if set points to the location of the trust roots</li>
+<li><strong>X509_USER_PROXY_ENVVARNAME</strong> &#8211; environment variable name &#8216;X509_USER_PROXY&#8217; if set points to the output location of the output EEC / Proxy certificate.  Not currently used by this class, included for reference only</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<p>created with</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>PROPERTY_DEFAULTS</strong> &#8211; sets permissable element names for MyProxy config</td>
-</tr>
-</tbody>
-</table>
-<p>file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>ROOT_USERNAME</strong> &#8211; root username - used to determine output directory</td>
-</tr>
-</tbody>
-</table>
-<p>for trust roots</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>ROOT_TRUSTROOT_DIR</strong> &#8211; default trust root directory if running as root</td>
-</tr>
-</tbody>
-</table>
-<p>user</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>USER_TRUSTROOT_DIR</strong> &#8211; default trust root directory for users other</td>
-</tr>
-</tbody>
-</table>
-<p>than root</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>X509_CERT_DIR_ENVVARNAME</strong> &#8211; environment variable name &#8216;X509_CERT_DIR&#8217;,</td>
-</tr>
-</tbody>
-</table>
-<p>which if set points to the location of the trust roots</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>X509_USER_PROXY_ENVVARNAME</strong> &#8211; environment variable name</td>
-</tr>
-</tbody>
-</table>
-<p>&#8216;X509_USER_PROXY&#8217; if set points to the output location of the output EEC /
-Proxy certificate.  Not currently used by this class, included for
-reference only</p>
 <dl class="attribute">
 <dt id="myproxy.client.MyProxyClient.caCertDir">
 <code class="descname">caCertDir</code><a class="headerlink" href="#myproxy.client.MyProxyClient.caCertDir" title="Permalink to this definition">¶</a></dt>
@@ -223,39 +111,21 @@ reference only</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>username</strong> &#8211; username of credential</li>
 <li><strong>passphrase</strong> &#8211; existing pass-phrase for credential</li>
 <li><strong>newPassphrase</strong> &#8211; new pass-phrase to replace the existing one.</li>
-<li><strong>sslCertFile</strong> &#8211; certificate used for client authentication with</li>
+<li><strong>sslCertFile</strong> &#8211; certificate used for client authentication with the MyProxy server SSL connection.  This ID will be set as the owner of the stored credentials.  Only the owner can later remove credentials with myproxy-destroy or the destroy method.  If not set, this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem</li>
+<li><strong>sslKeyFile</strong> &#8211; corresponding private key file.  See explanation for sslCertFile</li>
+<li><strong>sslKeyFilePassphrase</strong> &#8211; passphrase for sslKeyFile.  Omit if the private key is not password protected.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">none</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>the MyProxy server SSL connection.  This ID will be set as the owner
-of the stored credentials.  Only the owner can later remove 
-credentials with myproxy-destroy or the destroy method.  If not set,
-this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sslKeyFile</strong> &#8211; corresponding private key file.  See explanation</td>
-</tr>
-</tbody>
-</table>
-<p>for sslCertFile</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sslKeyFilePassphrase</strong> &#8211; passphrase for sslKeyFile.  Omit if the</td>
-</tr>
-</tbody>
-</table>
-<p>private key is not password protected.</p>
-<p>:return none</p>
 </dd></dl>
 
 <dl class="method">
@@ -272,23 +142,19 @@ this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>username</strong> &#8211; username selected for credential</li>
-<li><strong>sslCertFile</strong> &#8211; certificate used for client authentication with</li>
+<li><strong>sslCertFile</strong> &#8211; certificate used for client authentication with the MyProxy server SSL connection.  This ID will be set as the owner of the stored credentials.  Only the owner can later remove credentials with myproxy-destroy or the destroy method.  If not set, this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem</li>
+<li><strong>sslKeyFile</strong> &#8211; corresponding private key file.  See explanation for sslCertFile</li>
+<li><strong>sslKeyFilePassphrase</strong> &#8211; passphrase for sslKeyFile.  Omit if the private key is not password protected.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">none</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>the MyProxy server SSL connection.  This ID will be set as the owner
-of the stored credentials.  Only the owner can later remove 
-credentials with myproxy-destroy or the destroy method.  If not set,
-this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
-:param sslKeyFile: corresponding private key file.  See explanation
-for sslCertFile
-:param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
-private key is not password protected.  
-:return none</p>
 </dd></dl>
 
 <dl class="method">
@@ -305,46 +171,22 @@ private key is not password protected.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>username</strong> (<em>basestring</em>) &#8211; username (optional)</li>
 <li><strong>passphrase</strong> (<em>basestring</em>) &#8211; pass-phrase (optional)</li>
+<li><strong>writeToCACertDir</strong> (<em>bool</em>) &#8211; if set to True, write the retrieved trust roots out to the directory specified by the &#8220;caCertDir&#8221; attribute</li>
+<li><strong>bootstrap</strong> (<em>bool</em>) &#8211; If set to True, bootstrap trust roots i.e. connect to MyProxy server without verification of the server&#8217;s SSL certificate against any CA certificates.  Set to False, for default behaviour: verify server SSL certificate against CA certificates held in location set by the &#8220;caCertDir&#8221; attribute.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">trust root files as a dictionary keyed by file name with each item value set to the file contents</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>server</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>writeToCACertDir</strong> (<em>bool</em>) &#8211; if set to True, write the retrieved trust roots</td>
-</tr>
-</tbody>
-</table>
-<p>out to the directory specified by the &#8220;caCertDir&#8221; attribute</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bootstrap</strong> (<em>bool</em>) &#8211; If set to True, bootstrap trust roots i.e. connect to</td>
-</tr>
-</tbody>
-</table>
-<p>MyProxy server without verification of the server&#8217;s SSL certificate
-against any CA certificates.  Set to False, for default behaviour:
-verify server SSL certificate against CA certificates held in location
-set by the &#8220;caCertDir&#8221; attribute.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">trust root files as a dictionary keyed by file name with each</td>
-</tr>
-</tbody>
-</table>
-<p>item value set to the file contents
-:rtype: dict</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -370,22 +212,14 @@ given username</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>username</strong> (<em>string</em>) &#8211; username selected for credential</li>
-<li><strong>sslCertFile</strong> (<em>string</em>) &#8211; certificate used for client authentication with</li>
+<li><strong>sslCertFile</strong> (<em>string</em>) &#8211; certificate used for client authentication with the MyProxy server SSL connection.  This ID will be set as the owner of the stored credentials.  Only the owner can later remove credentials with myproxy-destroy or the destroy method.  If not set, this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem</li>
+<li><strong>sslKeyFile</strong> (<em>string</em>) &#8211; corresponding private key file.  See explanation for sslCertFile</li>
+<li><strong>sslKeyFilePassphrase</strong> (<em>string</em>) &#8211; passphrase for sslKeyFile.  Omit if the private key is not password protected.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<p>the MyProxy server SSL connection.  This ID will be set as the owner
-of the stored credentials.  Only the owner can later remove 
-credentials with myproxy-destroy or the destroy method.  If not set,
-this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
-:type sslKeyFile: string 
-:param sslKeyFile: corresponding private key file.  See explanation
-for sslCertFile
-:type sslKeyFilePassphrase: string
-:param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
-private key is not password protected.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -398,15 +232,14 @@ that MyProxy/Globus support</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enableTmpFileLoc</strong> &#8211; enable setting based on /tmp/x509up_&lt;uid&gt;,</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enableTmpFileLoc</strong> (<em>bool</em>) &#8211; enable setting based on /tmp/x509up_&lt;uid&gt;, defaults to False</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">private key and certificate file location to use based on the current environment</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
 </tr>
 </tbody>
 </table>
-<p>defaults to False
-:type enableTmpFileLoc: bool
-:return: private key and certificate file location to use based on the
-current environment
-:rtype: tuple</p>
 </dd></dl>
 
 <dl class="method">
@@ -418,114 +251,31 @@ current environment
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>username</strong> (<em>basestring</em>) &#8211; username of credential</li>
-<li><strong>passphrase</strong> (<em>basestring</em>) &#8211; pass-phrase for private key of credential held on</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p>server</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>credname</strong> (<em>string / None type</em>) &#8211; optional credential name - provides additional means</td>
-</tr>
-</tbody>
-</table>
-<p>to specify credential to be retrieved</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>passphrase</strong> (<em>basestring</em>) &#8211; pass-phrase for private key of credential held on server</li>
+<li><strong>credname</strong> (<em>string / None type</em>) &#8211; optional credential name - provides additional means         to specify credential to be retrieved</li>
 <li><strong>lifetime</strong> (<em>int</em>) &#8211; lifetime for generated certificate</li>
-<li><strong>keyPair</strong> (<em>OpenSSL.crypto.PKey</em>) &#8211; Public/Private key pair.  This is ignored if a</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p>certificate request is passed via the certReq keyword</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>certReq</strong> (<em>string</em>) &#8211; ASN1 format certificate request, if none set, one is</td>
-</tr>
-</tbody>
-</table>
-<p>created along with a key pair</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nBitsForKey</strong> (<em>int</em>) &#8211; number of bits to use when generating key pair,</td>
-</tr>
-</tbody>
-</table>
-<p>defaults to the PRIKEY_NBITS class variable setting.  This keyword is
-ignored if a key pair is passed in from an external source via the
-keyPair keyword</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Return credentials as strings in PEM format:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">the</td>
-</tr>
-</tbody>
-</table>
-<p>user certificate, it&#8217;s private key and the issuing certificate.  The
-issuing certificate is only set if the user certificate is a proxy</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bootstrap</strong> (<em>bool</em>) &#8211; If set to True, bootstrap trust roots i.e. connect to</td>
-</tr>
-</tbody>
-</table>
-<p>MyProxy server without verification of the server&#8217;s SSL certificate
-against any CA certificates.  Set to False, for default behaviour:
-verify server SSL certificate against CA certificates held in location
-set by the &#8220;caCertDir&#8221; attribute.  If bootstrap is set, updateTrustRoots
-will be forced to True also</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>keyPair</strong> (<em>OpenSSL.crypto.PKey</em>) &#8211; Public/Private key pair.  This is ignored if a         certificate request is passed via the certReq keyword</li>
+<li><strong>certReq</strong> (<em>string</em>) &#8211; ASN1 format certificate request, if none set, one is         created along with a key pair</li>
+<li><strong>nBitsForKey</strong> (<em>int</em>) &#8211; number of bits to use when generating key pair, defaults to the PRIKEY_NBITS class variable setting.  This keyword is ignored if a key pair is passed in from an external source via the keyPair keyword</li>
+<li><strong>bootstrap</strong> (<em>bool</em>) &#8211; If set to True, bootstrap trust roots i.e. connect to MyProxy server without verification of the server&#8217;s SSL certificate against any CA certificates.  Set to False, for default behaviour: verify server SSL certificate against CA certificates held in location set by the &#8220;caCertDir&#8221; attribute.  If bootstrap is set, updateTrustRoots will be forced to True also</li>
 <li><strong>updateTrustRoots</strong> (<em>bool</em>) &#8211; set to True to update the trust roots</li>
-<li><strong>authnGetTrustRootsCall</strong> (<em>bool</em>) &#8211; pass username and password to</li>
+<li><strong>authnGetTrustRootsCall</strong> (<em>bool</em>) &#8211; pass username and password to getTrustRoots call.  getTrustRoots is invoked if the &#8220;updateTrustRoots&#8221; or &#8220;bootstrap&#8221; keywords are set.  This is not recommended for bootstrap since in this case the server is NOT authenticated by this client.</li>
+<li><strong>sslCertFile</strong> &#8211; applies to SSL client based authentication - alternative to username/pass-phrase based.  This certificate is used for authentication with MyProxy server over the SSL connection.  If not set, this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem</li>
+<li><strong>sslKeyFile</strong> &#8211; corresponding private key file.  See explanation for sslCertFile</li>
+<li><strong>sslKeyFilePassphrase</strong> &#8211; passphrase for sslKeyFile.  Omit if the private key is not password protected.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">tuple</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">credentials as strings in PEM format: the user certificate, its private key and the issuing certificate.  The issuing certificate is only set if the user certificate is a proxy</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>getTrustRoots call.  getTrustRoots is invoked if the &#8220;updateTrustRoots&#8221;
-or &#8220;bootstrap&#8221; keywords are set.  This is not recommended for 
-bootstrap since in this case the server is NOT authenticated by this 
-client.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sslCertFile</strong> &#8211; applies to SSL client based authentication -</td>
-</tr>
-</tbody>
-</table>
-<p>alternative to username/pass-phrase based.  This certificate is used for 
-authentication with MyProxy server over the SSL connection.  If not set,
-this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
-:param sslKeyFile: corresponding private key file.  See explanation
-for sslCertFile
-:param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
-private key is not password protected.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -581,32 +331,18 @@ support the required proxyCertInfo X.509 certificate extension</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>username</strong> (<em>string</em>) &#8211; username selected for new credential</li>
-<li><strong>passphrase</strong> (<em>string</em>) &#8211; pass-phrase for new credential.  This will be used</li>
+<li><strong>passphrase</strong> (<em>string</em>) &#8211; pass-phrase for new credential.  This will be used by the server to authenticate later requests.  It must be at least 6 characters.  The server may impose other restrictions too depending on its configuration.</li>
+<li><strong>certFile</strong> (<em>string</em>) &#8211; user&#8217;s X.509 proxy certificate in PEM format</li>
+<li><strong>keyFile</strong> (<em>string</em>) &#8211; equivalent private key file in PEM format</li>
+<li><strong>sslCertFile</strong> (<em>string</em>) &#8211; certificate used for client authentication with the MyProxy server SSL connection.  If not set, this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem</li>
+<li><strong>sslKeyFile</strong> (<em>string</em>) &#8211; corresponding private key file.  See explanation for sslCertFile</li>
+<li><strong>sslKeyFilePassphrase</strong> (<em>string</em>) &#8211; passphrase for sslKeyFile.  Omit if the         private key is not password protected.</li>
+<li><strong>lifetime</strong> (<em>int / None</em>) &#8211; the maximum lifetime allowed for retrieved proxy credentials in seconds. defaults to proxyCertMaxLifetime attribute value</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<p>by the server to authenticate later requests.  IT must be at least
-6 characters.  The server may impose other restrictions too depending
-on its configuration.
-:type certFile: string
-:param certFile: user&#8217;s X.509 proxy certificate in PEM format
-:type keyFile: string
-:param keyFile: equivalent private key file in PEM format
-:type sslCertFile: string
-:param sslCertFile: certificate used for client authentication with
-the MyProxy server SSL connection.  If not set,
-this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
-:type sslKeyFile: string
-:param sslKeyFile: corresponding private key file.  See explanation
-for sslCertFile
-:type sslKeyFilePassphrase: string 
-:param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
-private key is not password protected.  
-:type lifetime: int / None
-:param lifetime: the maximum lifetime allowed for retrieved proxy 
-credentials in seconds. defaults to proxyCertMaxLifetime attribute value</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -663,43 +399,18 @@ environment variable settings</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>username</strong> (<em>string</em>) &#8211; username selected for new credential</li>
-<li><strong>passphrase</strong> (<em>string</em>) &#8211; pass-phrase for new credential.  This is the pass</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p>phrase which protects keyfile.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>passphrase</strong> (<em>string</em>) &#8211; pass-phrase for new credential.  This is the pass phrase which protects keyfile.</li>
 <li><strong>certFile</strong> (<em>string</em>) &#8211; user&#8217;s X.509 certificate in PEM format</li>
 <li><strong>keyFile</strong> (<em>string</em>) &#8211; equivalent private key file in PEM format</li>
-<li><strong>sslCertFile</strong> (<em>string</em>) &#8211; certificate used for client authentication with</li>
+<li><strong>sslCertFile</strong> (<em>string</em>) &#8211; certificate used for client authentication with the MyProxy server SSL connection.  This ID will be set as the owner of the stored credentials.  Only the owner can later remove credentials with myproxy-destroy or the destroy method.  If not set, this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem or if this is not set, certFile</li>
+<li><strong>sslKeyFile</strong> (<em>string</em>) &#8211; corresponding private key file.  See explanation for sslCertFile</li>
+<li><strong>sslKeyFilePassphrase</strong> (<em>string</em>) &#8211; passphrase for sslKeyFile.  Omit if the private key is not password protected.  Nb. keyFile is expected to be passphrase protected as this will be the passphrase used for logon / getDelegation.</li>
+<li><strong>force</strong> &#8211; set to True to overwrite any existing creds with the same username.  If, force=False a check is made with a call to info. If creds already, exist exit without proceeding</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<p>the MyProxy server SSL connection.  This ID will be set as the owner
-of the stored credentials.  Only the owner can later remove 
-credentials with myproxy-destroy or the destroy method.  If not set,
-this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem or if this
-is not set, certFile
-:type sslKeyFile: string
-:param sslKeyFile: corresponding private key file.  See explanation
-for sslCertFile
-:type sslKeyFilePassphrase: string 
-:param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
-private key is not password protected.  Nb. keyFile is expected to
-be passphrase protected as this will be the passphrase used for
-logon / getDelegation.
-:type Force: bool
-:param force: set to True to overwrite any existing creds with the
-same username.  If, force=False a check is made with a call to info.
-If creds already, exist exit without proceeding</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -735,7 +446,7 @@ passed direct into this method</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="README.html"
+  <p class="topless"><a href="index.html"
                         title="previous chapter">MyProxy Client Package</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -768,9 +479,9 @@ passed direct into this method</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="README.html" title="MyProxy Client Package"
+          <a href="index.html" title="MyProxy Client Package"
              >previous</a> |</li>
-        <li><a href="README.html">MyProxyClient 1.4.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">MyProxyClient 1.4.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

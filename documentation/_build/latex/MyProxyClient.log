@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.7.16)  11 FEB 2015 16:29
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.7.16)  12 FEB 2015 16:54
 entering extended mode
  %&-line parsing enabled.
 **MyProxyClient.tex
@@ -837,12 +837,8 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 143.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 143.
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--151
-[]\T1/ptm/m/n/10 API: >>> from myproxy.client im-port MyProx-y-Client >>> mypro
-xy_clnt = MyProx-y-
- []
-
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 149.
 [3] [4
 
 ]
@@ -852,9 +848,33 @@ Chapter 2.
 ]
 Chapter 3.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 211.
-[7] [8] [9] [10] [11]
-Underfull \hbox (badness 5817) in paragraph at lines 846--846
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 215.
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+[]\T1/pcr/b/n/10 X509_USER_PROXY_ENVVARNAME \T1/ptm/m/n/10 -- en-vi-ron-ment va
+ri-able name
+ []
+
+[8] [9]
+Underfull \hbox (badness 5316) in paragraph at lines 540--541
+\T1/ptm/m/n/10 username/pass-phrase based. This cer-tifi-cate is used for au-th
+en-ti-ca-tion with
+ []
+
+[10]
+Underfull \hbox (badness 7344) in paragraph at lines 635--636
+[]\T1/pcr/b/n/10 sslCertFile \T1/ptm/m/n/10 (\T1/ptm/m/it/10 string\T1/ptm/m/n/
+10 ) -- cer-tifi-cate used for client au-then-ti-ca-tion with the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
+\T1/ptm/m/n/10 MyProxy server SSL con-nec-tion. If not set, this ar-gu-ment de-
+faults to
+ []
+
+[11]
+Underfull \hbox (badness 5817) in paragraph at lines 700--700
 []\T1/ptm/m/it/10 username\T1/ptm/m/n/10 , \T1/ptm/m/it/10 passphrase\T1/ptm/m/
 n/10 , \T1/ptm/m/it/10 cert-File\T1/ptm/m/n/10 , \T1/ptm/m/it/10 key-File\T1/pt
 m/m/n/10 , \T1/ptm/m/it/10 sslCert-File=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 ss
@@ -926,13 +946,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
 ]) (./MyProxyClient.aux) ) 
 Here is how much of TeX's memory you used:
- 6452 strings out of 256216
- 83352 string characters out of 1917072
- 152391 words of memory out of 1500000
- 9493 multiletter control sequences out of 10000+200000
- 53492 words of font info for 60 fonts, out of 1200000 for 2000
+ 6465 strings out of 256216
+ 83491 string characters out of 1917072
+ 152389 words of memory out of 1500000
+ 9501 multiletter control sequences out of 10000+200000
+ 56378 words of font info for 65 fonts, out of 1200000 for 2000
  646 hyphenation exceptions out of 8191
- 34i,11n,45p,460b,621s stack positions out of 5000i,500n,6000p,200000b,15000s
+ 34i,11n,45p,460b,619s stack positions out of 5000i,500n,6000p,200000b,15000s
 {/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/s
 hare/texmf/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf/fonts/type1/urw
 /courier/ucrr8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
@@ -940,7 +960,7 @@ hare/texmf/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf/fonts/type1/urw
 /urw/helvetic/uhvr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></u
 sr/share/texmf/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on MyProxyClient.pdf (21 pages, 142893 bytes).
+Output written on MyProxyClient.pdf (21 pages, 143717 bytes).
 PDF statistics:
  226 PDF objects out of 1000 (max. 8388607)
  53 named destinations out of 1000 (max. 131072)

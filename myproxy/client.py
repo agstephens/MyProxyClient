@@ -64,9 +64,9 @@ class MyProxyServerSSLCertVerification(object):
         setting
         
         :type certDN: string
-        :param certDN: Set the expected Distinguished Name of the
-        MyProxy server to avoid errors matching hostnames.  This is useful
-        where the hostname is not fully qualified
+        :param certDN: Set the expected Distinguished Name of the MyProxy \
+server to avoid errors matching hostnames.  This is useful where the hostname \
+is not fully qualified
         """
         self.__certDN = None
         self.__hostname = None
@@ -84,24 +84,24 @@ class MyProxyServerSSLCertVerification(object):
         :type connection: OpenSSL.SSL.Connection
         :param connection: SSL connection object
         :type peerCert: basestring
-        :param peerCert: MyProxy server host certificate as OpenSSL.crypto.X509
-        instance
+        :param peerCert: MyProxy server host certificate as \
+OpenSSL.crypto.X509 instance
         :type errorStatus: int
-        :param errorStatus: error status passed from caller.  This is the value
-        returned by the OpenSSL C function X509_STORE_CTX_get_error().  Look-up
-        x509_vfy.h in the OpenSSL source to get the meanings of the different
-        codes.  PyOpenSSL doesn't help you!
+        :param errorStatus: error status passed from caller.  This is the \
+value returned by the OpenSSL C function X509_STORE_CTX_get_error().  Look-up \
+x509_vfy.h in the OpenSSL source to get the meanings of the different \
+codes.  PyOpenSSL doesn't help you!
         :type errorDepth: int
-        :param errorDepth: a non-negative integer representing where in the 
-        certificate chain the error occurred. If it is zero it occured in the 
-        end entity certificate, one if it is the certificate which signed the 
-        end entity certificate and so on.
+        :param errorDepth: a non-negative integer representing where in the \
+certificate chain the error occurred. If it is zero it occured in the \
+end entity certificate, one if it is the certificate which signed the \
+end entity certificate and so on.
 
         :type preverifyOK: int
-        :param preverifyOK: the error status - 0 = Error, 1 = OK of the current
-        SSL context irrespective of any verification checks done here.  If this
-        function yields an OK status, it should enforce the preverifyOK value
-        so that any error set upstream overrides and is honoured.
+        :param preverifyOK: the error status - 0 = Error, 1 = OK of the \
+current SSL context irrespective of any verification checks done here.  If \
+this function yields an OK status, it should enforce the preverifyOK value \
+so that any error set upstream overrides and is honoured.
         :rtype: int
         :return: status code - 0/False = Error, 1/True = OK
         """
@@ -232,8 +232,8 @@ class MyProxyClient(object):
     http://grid.ncsa.uiuc.edu/myproxy/protocol/
 
     :type SSL_METHOD: string
-    :cvar SSL_METHOD: encryption method used for connecting to MyProxy server
-    - set to TLS version 1
+    :cvar SSL_METHOD: encryption method used for connecting to MyProxy server \
+- set to TLS version 1
     
     :type MYPROXY_SERVER_ENVVARNAME: string
     :cvar MYPROXY_SERVER_ENVVARNAME: server environment variable name
@@ -242,12 +242,12 @@ class MyProxyClient(object):
     :cvar MYPROXY_SERVER_PORT_ENVVARNAME: port environment variable name
     
     :type MYPROXY_SERVER_DN_ENVVARNAME: string
-    :cvar MYPROXY_SERVER_DN_ENVVARNAME: server certificate Distinguished Name
-    environment variable name
+    :cvar MYPROXY_SERVER_DN_ENVVARNAME: server certificate Distinguished Name \
+environment variable name
     
     :type GLOBUS_LOCATION_ENVVARNAME: string
-    :param GLOBUS_LOCATION_ENVVARNAME: 'GLOBUS_LOCATION' environment variable
-    name
+    :cvar GLOBUS_LOCATION_ENVVARNAME: 'GLOBUS_LOCATION' environment variable \
+name
     
     :type GET_CMD: string
     :cvar GET_CMD: get command string
@@ -268,13 +268,13 @@ class MyProxyClient(object):
     :cvar GET_TRUST_ROOTS_CMD: get trust roots command string
     
     :type TRUSTED_CERTS_FIELDNAME: string
-    :param TRUSTED_CERTS_FIELDNAME: field name in get trust roots response for
-    trusted certificate file names
+    :cvar TRUSTED_CERTS_FIELDNAME: field name in get trust roots response \
+    for trusted certificate file names
     
     :type TRUSTED_CERTS_FILEDATA_FIELDNAME_PREFIX: string
-    :param TRUSTED_CERTS_FILEDATA_FIELDNAME_PREFIX: field name prefix in get 
-    trust roots response for trusted certificate file contents
-    
+    :cvar TRUSTED_CERTS_FILEDATA_FIELDNAME_PREFIX: field name prefix in get \
+trust roots response for trusted certificate file contents
+
     :type HOSTCERT_SUBDIRPATH: string
     :cvar HOSTCERT_SUBDIRPATH: sub-directory path host certificate (as tuple)
     
@@ -291,41 +291,41 @@ class MyProxyClient(object):
     :cvar SERVER_RESP_BLK_SIZE: block size for retrievals from server
     
     :type MAX_RECV_TRIES: int
-    :cvar MAX_RECV_TRIES: maximum number of retrievals of size 
-    SERVER_RESP_BLK_SIZE before this client gives up
-    
+    :cvar MAX_RECV_TRIES: maximum number of retrievals of size \
+SERVER_RESP_BLK_SIZE before this client gives up
+
     :type DEF_PROXY_FILEPATH: string
     :cvar DEF_PROXY_FILEPATH: default location for proxy file to be written to
     
     :type PROXY_FILE_PERMISSIONS: int
-    :cvar PROXY_FILE_PERMISSIONS: file permissions returned proxy file is 
-    created with
-    
+    :cvar PROXY_FILE_PERMISSIONS: file permissions returned proxy file is \
+created with
+
     :type PROPERTY_DEFAULTS: tuple
-    :cvar PROPERTY_DEFAULTS: sets permissable element names for MyProxy config 
+    :cvar PROPERTY_DEFAULTS: sets permissible element names for MyProxy config \
     file
 
     :type ROOT_USERNAME: string
-    :cvar ROOT_USERNAME: root username - used to determine output directory
+    :cvar ROOT_USERNAME: root username - used to determine output directory \
     for trust roots
 
     :type ROOT_TRUSTROOT_DIR: string
-    :cvar ROOT_TRUSTROOT_DIR: default trust root directory if running as root
-    user 
+    :cvar ROOT_TRUSTROOT_DIR: default trust root directory if running as root \
+user 
 
     :type USER_TRUSTROOT_DIR: string
-    :cvar USER_TRUSTROOT_DIR: default trust root directory for users other
-    than root
+    :cvar USER_TRUSTROOT_DIR: default trust root directory for users other \
+than root
     
     :type X509_CERT_DIR_ENVVARNAME: string
-    :cvar X509_CERT_DIR_ENVVARNAME: environment variable name 'X509_CERT_DIR',
+    :cvar X509_CERT_DIR_ENVVARNAME: environment variable name 'X509_CERT_DIR', \
     which if set points to the location of the trust roots 
     
     :type X509_USER_PROXY_ENVVARNAME: string
-    :cvar X509_USER_PROXY_ENVVARNAME: environment variable name 
-    'X509_USER_PROXY' if set points to the output location of the output EEC /
-    Proxy certificate.  Not currently used by this class, included for
-    reference only
+    :cvar X509_USER_PROXY_ENVVARNAME: environment variable name \
+'X509_USER_PROXY' if set points to the output location of the output EEC / \
+Proxy certificate.  Not currently used by this class, included for \
+reference only
     """
 
     # Parametise SSL METHOD to allow later update if needed - set to TLSv1 to
@@ -702,20 +702,20 @@ TRUSTED_CERTS=1"""
         server side identity checks
         
         :type sslCertFile: basestring
-        :param sslCertFile: certificate for SSL client authentication.  It may
-        be owner of a credential to be acted on or the concatenated proxy 
-        certificate + proxy's signing cert.  SSL client authentication is not 
-        necessary for getDelegation / logon calls
+        :param sslCertFile: certificate for SSL client authentication.  It may \
+be owner of a credential to be acted on or the concatenated proxy \
+certificate + proxy's signing cert.  SSL client authentication is not \
+necessary for getDelegation / logon calls
         :type sslKeyFile: basestring
         :param sslKeyFile: client private key file
         :type keyFilePassphrase: basestring
-        :param keyFilePassphrase: pass-phrase protecting private key if set
+        :param keyFilePassphrase: pass-phrase protecting private key if set \
         :type verifyPeerWithTrustRoots: bool
-        :param verifyPeerWithTrustRoots: verify MyProxy server's SSL certificate
-        against a list of trusted CA certificates in the CA certificate 
-        directory set by the "CaCertDir" attribute.  This should always be set 
-        to True for MyProxy client calls unless using the 'bootstrap' trust
-        roots mode available with logon and get trust roots calls
+        :param verifyPeerWithTrustRoots: verify MyProxy server's SSL certificate \
+against a list of trusted CA certificates in the CA certificate \
+directory set by the "CaCertDir" attribute.  This should always be set \
+to True for MyProxy client calls unless using the 'bootstrap' trust \
+roots mode available with logon and get trust roots calls
         """
         context = SSL.Context(self.__class__.SSL_METHOD)
         
@@ -767,7 +767,7 @@ TRUSTED_CERTS=1"""
     def _createKeyPair(self, nBitsForKey=PRIKEY_NBITS):
         """Generate key pair and return as PEM encoded string
         :type nBitsForKey: int
-        :param nBitsForKey: number of bits for private key generation - 
+        :param nBitsForKey: number of bits for private key generation - \
         default is 2048
         :rtype: OpenSSL.crypto.PKey
         :return: public/private key pair
@@ -781,7 +781,7 @@ TRUSTED_CERTS=1"""
         """Create a certificate request.
         
         :type CN: basestring
-        :param CN: Common Name for certificate - effectively the same as the
+        :param CN: Common Name for certificate - effectively the same as the \
         username for the MyProxy credential
         :type keyPair: string/None
         :param keyPair: public/private key pair
@@ -811,9 +811,9 @@ TRUSTED_CERTS=1"""
         Deserialize a MyProxy server response
         
         :param msg: string response message from MyProxy server
-        :return: tuple of integer response and errorTxt string (if any) and all 
-        the fields parsed.  fields is a list of two element, field name, field 
-        value tuples.
+        :return: tuple of integer response and errorTxt string (if any) and \ 
+all the fields parsed.  fields is a list of two element, field name, field \
+value tuples.
         :rtype: tuple
         """  
         lines = msg.split('\n')
@@ -850,7 +850,7 @@ TRUSTED_CERTS=1"""
         :param inputDat: string containing the proxy cert and private key
         and signing cert all in DER format
         
-        :return list containing the equivalent to the input in PEM format"""
+        :return: list containing the equivalent to the input in PEM format"""
         pemCerts = []
         dat = inputDat
         
@@ -879,11 +879,11 @@ TRUSTED_CERTS=1"""
         authenticate with the server based on the various default locations
         that MyProxy/Globus support
         
-        :param enableTmpFileLoc: enable setting based on /tmp/x509up_<uid>,
-        defaults to False
+        :param enableTmpFileLoc: enable setting based on /tmp/x509up_<uid>, \
+defaults to False
         :type enableTmpFileLoc: bool
-        :return: private key and certificate file location to use based on the
-        current environment
+        :return: private key and certificate file location to use based on the \
+current environment
         :rtype: tuple
         """
         sslKeyFile = None
@@ -996,27 +996,27 @@ TRUSTED_CERTS=1"""
         :type username: string
         :param username: username selected for new credential
         :type passphrase: string
-        :param passphrase: pass-phrase for new credential.  This will be used 
-        by the server to authenticate later requests.  IT must be at least
-        6 characters.  The server may impose other restrictions too depending
-        on its configuration.
+        :param passphrase: pass-phrase for new credential.  This will be used \
+by the server to authenticate later requests.  It must be at least \
+6 characters.  The server may impose other restrictions too depending \
+on its configuration.
         :type certFile: string
         :param certFile: user's X.509 proxy certificate in PEM format
         :type keyFile: string
         :param keyFile: equivalent private key file in PEM format
         :type sslCertFile: string
-        :param sslCertFile: certificate used for client authentication with
-        the MyProxy server SSL connection.  If not set,
-        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
+        :param sslCertFile: certificate used for client authentication with \
+the MyProxy server SSL connection.  If not set, \
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
         :type sslKeyFile: string
-        :param sslKeyFile: corresponding private key file.  See explanation
-        for sslCertFile
+        :param sslKeyFile: corresponding private key file.  See explanation \
+for sslCertFile
         :type sslKeyFilePassphrase: string 
-        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
+        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \
         private key is not password protected.  
         :type lifetime: int / None
-        :param lifetime: the maximum lifetime allowed for retrieved proxy 
-        credentials in seconds. defaults to proxyCertMaxLifetime attribute value
+        :param lifetime: the maximum lifetime allowed for retrieved proxy \
+credentials in seconds. defaults to proxyCertMaxLifetime attribute value
         """
         raise NotImplementedError('put method is not currently implemented.  '
                                   'It requires the creation of a proxy '
@@ -1038,17 +1038,17 @@ TRUSTED_CERTS=1"""
         :type username: string
         :param username: username selected for credential
         :type sslCertFile: string
-        :param sslCertFile: certificate used for client authentication with
-        the MyProxy server SSL connection.  This ID will be set as the owner
-        of the stored credentials.  Only the owner can later remove 
-        credentials with myproxy-destroy or the destroy method.  If not set,
-        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
+        :param sslCertFile: certificate used for client authentication with \
+the MyProxy server SSL connection.  This ID will be set as the owner of the \
+stored credentials.  Only the owner can later remove credentials with \
+myproxy-destroy or the destroy method.  If not set, this argument defaults to \
+$GLOBUS_LOCATION/etc/hostcert.pem 
         :type sslKeyFile: string 
-        :param sslKeyFile: corresponding private key file.  See explanation
-        for sslCertFile
+        :param sslKeyFile: corresponding private key file.  See explanation \
+for sslCertFile
         :type sslKeyFilePassphrase: string
-        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
-        private key is not password protected.
+        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \
+private key is not password protected.
         """
         globusLoc = os.environ.get(MyProxyClient.GLOBUS_LOCATION_ENVVARNAME)
         if not sslCertFile:
@@ -1101,19 +1101,19 @@ TRUSTED_CERTS=1"""
         :param username: username of credential
         :param passphrase: existing pass-phrase for credential
         :param newPassphrase: new pass-phrase to replace the existing one.
-        :param sslCertFile: certificate used for client authentication with
-        the MyProxy server SSL connection.  This ID will be set as the owner
-        of the stored credentials.  Only the owner can later remove 
-        credentials with myproxy-destroy or the destroy method.  If not set,
-        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
+        :param sslCertFile: certificate used for client authentication with \
+the MyProxy server SSL connection.  This ID will be set as the owner \
+of the stored credentials.  Only the owner can later remove \
+credentials with myproxy-destroy or the destroy method.  If not set, \
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
         
-        :param sslKeyFile: corresponding private key file.  See explanation
-        for sslCertFile
+        :param sslKeyFile: corresponding private key file.  See explanation \
+for sslCertFile
         
-        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
-        private key is not password protected.  
+        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \
+private key is not password protected.  
         
-        :return none
+        :return: none
         """
         globusLoc = os.environ.get(MyProxyClient.GLOBUS_LOCATION_ENVVARNAME)
         if not sslCertFile or not sslKeyFile:
@@ -1160,16 +1160,16 @@ TRUSTED_CERTS=1"""
         :raise MyProxyClientRetrieveError:
         
         :param username: username selected for credential
-        :param sslCertFile: certificate used for client authentication with
-        the MyProxy server SSL connection.  This ID will be set as the owner
-        of the stored credentials.  Only the owner can later remove 
-        credentials with myproxy-destroy or the destroy method.  If not set,
-        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
-        :param sslKeyFile: corresponding private key file.  See explanation
-        for sslCertFile
-        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
-        private key is not password protected.  
-        :return none
+        :param sslCertFile: certificate used for client authentication with \
+the MyProxy server SSL connection.  This ID will be set as the owner \
+of the stored credentials.  Only the owner can later remove \
+credentials with myproxy-destroy or the destroy method.  If not set, \
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
+        :param sslKeyFile: corresponding private key file.  See explanation \
+for sslCertFile
+        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \
+private key is not password protected.  
+        :return: none
         """
         globusLoc = os.environ.get(MyProxyClient.GLOBUS_LOCATION_ENVVARNAME)
         if not sslCertFile or not sslKeyFile:
@@ -1221,32 +1221,32 @@ TRUSTED_CERTS=1"""
         :type username: string
         :param username: username selected for new credential
         :type passphrase: string
-        :param passphrase: pass-phrase for new credential.  This is the pass 
-        phrase which protects keyfile.
+        :param passphrase: pass-phrase for new credential.  This is the pass \
+phrase which protects keyfile.
         
         :type certFile: string
         :param certFile: user's X.509 certificate in PEM format
         :type keyFile: string
         :param keyFile: equivalent private key file in PEM format
         :type sslCertFile: string
-        :param sslCertFile: certificate used for client authentication with
-        the MyProxy server SSL connection.  This ID will be set as the owner
-        of the stored credentials.  Only the owner can later remove 
-        credentials with myproxy-destroy or the destroy method.  If not set,
-        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem or if this
-        is not set, certFile
+        :param sslCertFile: certificate used for client authentication with \
+the MyProxy server SSL connection.  This ID will be set as the owner \
+of the stored credentials.  Only the owner can later remove \
+credentials with myproxy-destroy or the destroy method.  If not set, \
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem or if this \
+is not set, certFile
         :type sslKeyFile: string
-        :param sslKeyFile: corresponding private key file.  See explanation
-        for sslCertFile
+        :param sslKeyFile: corresponding private key file.  See explanation \
+for sslCertFile
         :type sslKeyFilePassphrase: string 
-        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
-        private key is not password protected.  Nb. keyFile is expected to
-        be passphrase protected as this will be the passphrase used for
-        logon / getDelegation.
+        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \
+private key is not password protected.  Nb. keyFile is expected to \
+be passphrase protected as this will be the passphrase used for \
+logon / getDelegation.
         :type Force: bool
-        :param force: set to True to overwrite any existing creds with the
-        same username.  If, force=False a check is made with a call to info.
-        If creds already, exist exit without proceeding
+        :param force: set to True to overwrite any existing creds with the \
+same username.  If, force=False a check is made with a call to info. \
+If creds already, exist exit without proceeding
         """
         
         lifetime = lifetime or self.proxyCertMaxLifetime
@@ -1337,61 +1337,61 @@ TRUSTED_CERTS=1"""
         :param username: username of credential
         
         :type passphrase: basestring
-        :param passphrase: pass-phrase for private key of credential held on
-        server
+        :param passphrase: pass-phrase for private key of credential held on \
+server
         
         :type credname: string / None type
-        :param credname: optional credential name - provides additional means
+        :param credname: optional credential name - provides additional means \
         to specify credential to be retrieved
         
         :type lifetime: int
         :param lifetime: lifetime for generated certificate
         
         :type keyPair: OpenSSL.crypto.PKey
-        :param keyPair: Public/Private key pair.  This is ignored if a 
+        :param keyPair: Public/Private key pair.  This is ignored if a \
         certificate request is passed via the certReq keyword
         
         :type certReq: string
-        :param certReq: ASN1 format certificate request, if none set, one is 
+        :param certReq: ASN1 format certificate request, if none set, one is \
         created along with a key pair
         
         :type nBitsForKey: int
-        :param nBitsForKey: number of bits to use when generating key pair,
-        defaults to the PRIKEY_NBITS class variable setting.  This keyword is
-        ignored if a key pair is passed in from an external source via the
-        keyPair keyword
+        :param nBitsForKey: number of bits to use when generating key pair, \
+defaults to the PRIKEY_NBITS class variable setting.  This keyword is \
+ignored if a key pair is passed in from an external source via the keyPair \
+keyword
         
         :rtype: tuple
-        :return credentials as strings in PEM format: the
-        user certificate, it's private key and the issuing certificate.  The
-        issuing certificate is only set if the user certificate is a proxy
+        :return: credentials as strings in PEM format: the user certificate, \
+its private key and the issuing certificate.  The issuing certificate is only \
+set if the user certificate is a proxy
         
         :type bootstrap: bool
-        :param bootstrap: If set to True, bootstrap trust roots i.e. connect to
-        MyProxy server without verification of the server's SSL certificate
-        against any CA certificates.  Set to False, for default behaviour:
-        verify server SSL certificate against CA certificates held in location
-        set by the "caCertDir" attribute.  If bootstrap is set, updateTrustRoots
-        will be forced to True also
+        :param bootstrap: If set to True, bootstrap trust roots i.e. connect \
+to MyProxy server without verification of the server's SSL certificate \
+against any CA certificates.  Set to False, for default behaviour: \
+verify server SSL certificate against CA certificates held in location \
+set by the "caCertDir" attribute.  If bootstrap is set, updateTrustRoots \
+will be forced to True also
         
         :type updateTrustRoots: bool
         :param updateTrustRoots: set to True to update the trust roots
         
         :type authnGetTrustRootsCall: bool
-        :param authnGetTrustRootsCall: pass username and password to 
-        getTrustRoots call.  getTrustRoots is invoked if the "updateTrustRoots"
-        or "bootstrap" keywords are set.  This is not recommended for 
-        bootstrap since in this case the server is NOT authenticated by this 
-        client. 
+        :param authnGetTrustRootsCall: pass username and password to \
+getTrustRoots call.  getTrustRoots is invoked if the \
+"updateTrustRoots" or "bootstrap" keywords are set.  This is not recommended \
+for bootstrap since in this case the server is NOT authenticated by this \
+client. 
         
-        :param sslCertFile: applies to SSL client based authentication - 
-        alternative to username/pass-phrase based.  This certificate is used for 
-        authentication with MyProxy server over the SSL connection.  If not set,
-        this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
-        :param sslKeyFile: corresponding private key file.  See explanation
-        for sslCertFile
-        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the
-        private key is not password protected.  
+        :param sslCertFile: applies to SSL client based authentication - \
+alternative to username/pass-phrase based.  This certificate is used for \
+authentication with MyProxy server over the SSL connection.  If not set, \
+this argument defaults to $GLOBUS_LOCATION/etc/hostcert.pem 
+        :param sslKeyFile: corresponding private key file.  See explanation \
+for sslCertFile
+        :param sslKeyFilePassphrase: passphrase for sslKeyFile.  Omit if the \
+private key is not password protected.  
         """
         if bootstrap:
             log.info('Bootstrapping MyProxy server root of trust.')
@@ -1537,21 +1537,20 @@ TRUSTED_CERTS=1"""
         
         :type passphrase: basestring
         :param passphrase: pass-phrase (optional)
-        server
         
         :type writeToCACertDir: bool
-        :param writeToCACertDir: if set to True, write the retrieved trust roots
-        out to the directory specified by the "caCertDir" attribute
+        :param writeToCACertDir: if set to True, write the retrieved trust \
+roots out to the directory specified by the "caCertDir" attribute
         
         :type bootstrap: bool
-        :param bootstrap: If set to True, bootstrap trust roots i.e. connect to
-        MyProxy server without verification of the server's SSL certificate
-        against any CA certificates.  Set to False, for default behaviour:
-        verify server SSL certificate against CA certificates held in location
-        set by the "caCertDir" attribute.
+        :param bootstrap: If set to True, bootstrap trust roots i.e. connect \
+to MyProxy server without verification of the server's SSL certificate \
+against any CA certificates.  Set to False, for default behaviour: \
+verify server SSL certificate against CA certificates held in location \
+set by the "caCertDir" attribute.
         
-        :return: trust root files as a dictionary keyed by file name with each 
-        item value set to the file contents
+        :return: trust root files as a dictionary keyed by file name with each \
+item value set to the file contents
         :rtype: dict
         """
         if bootstrap:

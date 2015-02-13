@@ -27,13 +27,13 @@ except ImportError:
 
 import os
 THIS_DIR = os.path.dirname(__file__)
-
+README = open(os.path.join(THIS_DIR, 'README.md')).read()
 
 setup(
     name =            	'MyProxyClient',
-    version =         	'1.4.0',
+    version =         	'1.4.1',
     description =     	'MyProxy Client',
-    long_description = 	open(os.path.join(THIS_DIR, 'README.md')).read(),
+    long_description = 	README,
     author =          	'Philip Kershaw',
     author_email =    	'Philip.Kershaw@stfc.ac.uk',
     maintainer =        'Philip Kershaw',

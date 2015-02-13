@@ -44,7 +44,7 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'README'
+master_doc = 'index'
 
 # General information about the project.
 project = u'MyProxyClient'
@@ -219,7 +219,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('README', 'MyProxyClient.tex', u'MyProxyClient Documentation',
+  ('index', 'MyProxyClient.tex', u'MyProxyClient Documentation',
    u'P J Kershaw', 'manual'),
 ]
 
@@ -249,7 +249,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('README', 'myproxyclient', u'MyProxyClient Documentation',
+    ('index', 'myproxyclient', u'MyProxyClient Documentation',
      [u'P J Kershaw'], 1)
 ]
 
@@ -263,7 +263,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('README', 'MyProxyClient', u'MyProxyClient Documentation',
+  ('index', 'MyProxyClient', u'MyProxyClient Documentation',
    u'P J Kershaw', 'MyProxyClient', 'One line description of project.',
    'Miscellaneous'),
 ]
