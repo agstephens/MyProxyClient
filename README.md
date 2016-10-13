@@ -32,7 +32,11 @@ $ myproxyclient logon -s myproxy.somewhere.ac.uk -l <username> -o creds.pem -b
 
 Releases
 ========
-1.4.1
+1.4.4
+-----
+ * Minor changes for ready for inclusion in conda-forge.  Thanks to Alex Goodman.
+
+1.4.3
 -----
  * Fix for SSL to use TLS instead of SSLv3 to address POODLE vulnerability
  * Fix for SSL verification for PyOpenSSL version 0.14 - v1.3.1 was broken
