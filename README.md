@@ -62,5 +62,5 @@ Makefile to regenerate if required.
 
 Thanks
 ======
- * to OMII-UK for funding development of NDG Security (2007-2008)
+ * to OMII-UK (Now Software Sustainability Institute) for funding development of NDG Security (2007-2008)
  * Tom Uram who wrote the `myproxy_logon` program on which this package is based.
