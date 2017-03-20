@@ -1,10 +1,10 @@
 MyProxy Client Package
 ======================
 This a pure* Python implementation of a client to the MyProxy Credential
-Management Server (http://grid.ncsa.uiuc.edu/myproxy/).  It provides both a 
+Management Server (http://grid.ncsa.uiuc.edu/myproxy/).  It provides both a
 Python API and a command line interface.
 
-* i.e. MyProxy C client libraries are not required for this package. 
+* i.e. MyProxy C client libraries are not required for this package.
 
 It uses pyOpenSSL to make an SSL connection to the server following the
 messaging interface as outlined in: http://grid.ncsa.uiuc.edu/myproxy/protocol/
@@ -32,6 +32,15 @@ $ myproxyclient logon -s myproxy.somewhere.ac.uk -l <username> -o creds.pem -b
 
 Releases
 ========
+2.0.0
+-----
+ * Ported to Python 3.  This version is dual compatible with Python 2 and 3.
+ * Minor fix to script to improve error reporting
+ * Added Vagrantfile to enable provisioning of test myproxy-server for use with
+   the tests.
+
+Tested on CentOS 6.8 and OSX El Capitan
+
 1.4.4
 -----
  * Minor changes for ready for inclusion in conda-forge.  Thanks to Alex Goodman.
@@ -42,13 +51,13 @@ Releases
  * Fix for SSL verification for PyOpenSSL version 0.14 - v1.3.1 was broken
    because it passed the call back method to OpenSSL using verification classes'
    `__call__` method.
-   
-Tested on CentOS 6.4.
-   
+
+Tested on CentOS 6.4
+
 1.3.1
 -----
- * Fix to `MyProxyClient.writeProxyFile` and 
-   `MyProxyClient.readProxyFile` to correctly pick-up overridden file 
+ * Fix to `MyProxyClient.writeProxyFile` and
+   `MyProxyClient.readProxyFile` to correctly pick-up overridden file
    setting.  Thanks to Nicolas Carenton, IPSL.
 
 Tests
@@ -57,7 +66,7 @@ Unit test module with test files is in test/.  See the README in that directory.
 
 Documentation
 =============
-Sphinx generated documentation is available in documentation/.  run the 
+Sphinx generated documentation is available in documentation/.  run the
 Makefile to regenerate if required.
 
 Thanks

@@ -9,7 +9,9 @@ The first, MyProxyClientLiveTestCase depends on connection to a myproxy-server.
 The test certificates and files in this directory are for illustration only.
 They must be replaced with certificates issued by a CA that the myproxy-server
 is configured to trust. See http://grid.ncsa.uiuc.edu/myproxy/ for guidance on 
-installing and configuring MyProxy.
+installing and configuring MyProxy.  For users of Vagrant, a Vagrantfile is 
+included in order to provision a virtual machine with a test deployment of
+MyProxy server for use with the tests.
 
 The second test class MyProxyClientInterfaceTestCase, performs sanity checks on
 the getting and setting of attributes.  These tests can be run without access
@@ -34,9 +36,9 @@ for any mismatch between the MyProxy server certificate Distinguished Name and
 the hostname of the host server.
 
 The tests involve uploading new credentials, changing password settings and
-finally removing these credentials from the MyP.  Make sure the MyProxy server you are using
-for tests is configured to allow you to carry out these operations and that
-you have test certificates issued by a CA that the MyProxy server is 
+finally removing these credentials from the MyP.  Make sure the MyProxy server 
+you are using for tests is configured to allow you to carry out these operations 
+and that you have test certificates issued by a CA that the MyProxy server is 
 configured to trust.  If necessary download and install a copy of MyProxy for 
 test purposes.  Tests may be run individually e.g. to test myProxy logon only. 
 See 1.4)

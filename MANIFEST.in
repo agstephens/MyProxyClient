@@ -9,4 +9,4 @@
 #
 # BSD - See LICENCE file for details
 include README.md
-include LICENSE
+include myproxy/LICENSE

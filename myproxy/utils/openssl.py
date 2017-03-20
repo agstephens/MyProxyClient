@@ -11,32 +11,34 @@ __contact__ = "Philip.Kershaw@stfc.ac.uk"
 __revision__ = '$Id:openssl.py 4643 2008-12-15 14:53:53Z pjkersha $'
 import re
 import os
-from ConfigParser import SafeConfigParser
+
+import six
+from six.moves.configparser import SafeConfigParser
 
 
 class OpenSSLConfigError(Exception):
-    """Exceptions related to OpenSSLConfig class"""   
+    """Exceptions related to OpenSSLConfig class"""
 
 
 class OpenSSLConfig(SafeConfigParser, object):
     """Wrapper to OpenSSL Configuration file to allow extraction of
     required distinguished name used for making certificate requests
-    
+
     @type _certReqDNParamName: tuple
     @cvar _certReqDNParamName: permissable keys for Distinguished Name
     (not including CN which gets set separately).  This is used in _setReqDN
     to check input
-    
+
     @type _caDirPat: string
     @cvar _caDirPat: sub-directory path to CA config directory
     @type _gridCASubDir: string
     @cvar _gridCASubDir: sub-directory of globus user for CA settings"""
-    
+
     _certReqDNParamName = (
         'countryName',
         'C',
         'stateOrProvinceName',
-        'ST', 
+        'ST',
         'localityName',
         'L'
         'organizationName',
@@ -47,50 +49,50 @@ class OpenSSLConfig(SafeConfigParser, object):
         'CN',
         'emailAddress'
     )
-        
-    _caDirPat = re.compile('\$dir')    
+
+    _caDirPat = re.compile('\$dir')
     _gridCASubDir = os.path.join(".globus", "simpleCA")
 
     def __init__(self, filePath=None, caDir=None):
         """Initial OpenSSL configuration optionally setting a file path to
         read from
-        
-        @type filePath: string        
+
+        @type filePath: string
         @param filePath: path to OpenSSL configuration file
-        
+
         @type caDir: string
         @param caDir: directory for SimpleCA.  This is substituted for $dir
-        in OpenSSL config file where present.  caDir can be left out in 
+        in OpenSSL config file where present.  caDir can be left out in
         which case the substitution is not done"""
-        
+
         SafeConfigParser.__init__(self)
-        
+
         self._reqDN = None
         self._setFilePath(filePath)
 
         # Set-up CA directory
         self.setCADir(caDir)
 
-            
+
     def _setFilePath(self, filePath):
         """Set property method
         @type filePath: string
         @param filePath: path for OpenSSL configuration file"""
         if filePath is not None:
-            if not isinstance(filePath, basestring):
+            if not isinstance(filePath, six.string_types):
                 raise OpenSSLConfigError("Input OpenSSL config file path must "
                                          "be a string")
 
             try:
                 if not os.access(filePath, os.R_OK):
                     raise OpenSSLConfigError("Not found or no read access")
-                                         
-            except Exception, e:
+
+            except Exception as e:
                 raise OpenSSLConfigError("OpenSSL config file path is not "
                                          'valid: "%s": %s' % (filePath, e))
-                    
+
         self._filePath = filePath
-                    
+
     def _getFilePath(self):
         """Get property method
         @rtype: string
@@ -100,7 +102,7 @@ class OpenSSLConfig(SafeConfigParser, object):
     filePath = property(fget=_getFilePath,
                         fset=_setFilePath,
                         doc="file path for configuration file")
-      
+
     def setCADir(self, caDir):
         """Set property method
         @type caDir: string
@@ -113,20 +115,20 @@ class OpenSSLConfig(SafeConfigParser, object):
             else:
                 self._caDir = None
         else:
-            if not isinstance(caDir, basestring):
+            if not isinstance(caDir, six.string_types):
                 raise OpenSSLConfigError("Input OpenSSL CA directory path "
                                          "must be a string")
 
             try:
                 if not os.access(caDir, os.R_OK):
                     raise OpenSSLConfigError("Not found or no read access")
-                                         
-            except Exception, e:
+
+            except Exception as e:
                 raise OpenSSLConfigError("OpenSSL CA directory path is not "
                                          'valid: "%s": %s' % (caDir, e))
-                    
+
         self._caDir = caDir
-                    
+
     def _getCADir(self):
         """Get property method
         @rtype caDir: string
@@ -149,13 +151,13 @@ class OpenSSLConfig(SafeConfigParser, object):
         @param reqDN: Distinguished Name for certificate request"""
         if not isinstance(reqDN, dict):
             raise AttributeError("Distinguished Name must be dict type")
-        
+
         invalidKw = [k for k in dict \
                      if k not in OpenSSLConfig._certReqDNParamName]
         if invalidKw:
             raise AttributeError("Invalid certificate request keyword(s): "
-                                 "%s.  Valid keywords are: %s" % 
-                                 (', '.join(invalidKw), 
+                                 "%s.  Valid keywords are: %s" %
+                                 (', '.join(invalidKw),
                                  ', '.join(OpenSSLConfig._certReqDNParamName)))
 
         self._reqDN = reqDN
@@ -163,43 +165,43 @@ class OpenSSLConfig(SafeConfigParser, object):
     reqDN = property(fget=_getReqDN,
                      fset=_setReqDN,
                      doc="Distinguished Name for certificate request")
-    
+
     def read(self):
         """Override base class version to avoid parsing error with the first
-        'RANDFILE = ...' part of the openssl file.  Also, reformat _sections 
-        to allow for the style of SSL config files where section headings can 
-        have spaces either side of the brackets e.g. 
-        [ sectionName ] 
-        
-        and comments can occur on the same line as an option e.g. 
+        'RANDFILE = ...' part of the openssl file.  Also, reformat _sections
+        to allow for the style of SSL config files where section headings can
+        have spaces either side of the brackets e.g.
+        [ sectionName ]
+
+        and comments can occur on the same line as an option e.g.
         option = blah # This is option blah
-        
+
         Reformat _sections to """
         try:
             config_file = open(self._filePath)
             fileTxt = config_file.read()
-        except Exception, e:
-            raise OpenSSLConfigError('Reading OpenSSL config file "%s": %s' % 
+        except Exception as e:
+            raise OpenSSLConfigError('Reading OpenSSL config file "%s": %s' %
                                                     (self._filePath, e))
 
         idx = re.search('\[\s*\w*\s*\]', fileTxt).span()[0]
         config_file.seek(idx)
         SafeConfigParser.readfp(self, config_file)
-        
+
         # Filter section names and remove comments from options
-        for section, val in self._sections.items():
+        for section, val in list(self._sections.items()):
             newSection = section
             self._sections[newSection.strip()] = \
                                     dict([(opt, self._filtOptVal(optVal))
-                                          for opt, optVal in val.items()])
+                                          for opt, optVal in list(val.items())])
             del self._sections[section]
-       
+
         self._set_required_dn_params()
 
     def _filtOptVal(self, optVal):
         """For option value, filter out comments and substitute $dir with
         the CA directory location
-        
+
         @type optVal: string
         @param optVal: option value"""
         filtVal = optVal.split('#')[0].strip()
@@ -208,7 +210,7 @@ class OpenSSLConfig(SafeConfigParser, object):
             return OpenSSLConfig._caDirPat.sub(self._caDir, filtVal)
         else:
             # Leave $dir in place as no CA directory has been set
-            return filtVal    
+            return filtVal
 
     def readfp(self, fp):
         """Set to not implemented as using a file object could be problematic
@@ -219,15 +221,15 @@ class OpenSSLConfig(SafeConfigParser, object):
     def _set_required_dn_params(self):
         """Set Required DN parameters from the configuration file returning
         them in a dictionary"""
-        
+
         # Nb. Match over line boundaries
         try:
             self._reqDN = {
-                'O': self.get('req_distinguished_name', 
+                'O': self.get('req_distinguished_name',
                               '0.organizationName_default'),
-                'OU': self.get('req_distinguished_name', 
+                'OU': self.get('req_distinguished_name',
                                '0.organizationalUnitName_default')
             }
-        except Exception, e:
+        except Exception as e:
             raise OpenSSLConfigError('Setting content of Distinguished Name '
                                      'from file "%s": %s' % (self._filePath, e))

@@ -1,4 +1,4 @@
-"""MyProxy client utils package - contains openssl module for parsing OpenSSL 
+"""MyProxy client utils package - contains openssl module for parsing OpenSSL
 config files.
 
 NERC DataGrid Project
@@ -9,13 +9,13 @@ __copyright__ = "(C) 2009 Science and Technology Facilities Council"
 __license__ = """BSD - See LICENSE file in top-level directory"""
 __contact__ = "Philip.Kershaw@stfc.ac.uk"
 __revision__ = '$Id$'
-from ConfigParser import SafeConfigParser
+from six.moves.configparser import SafeConfigParser
 
 
 class CaseSensitiveConfigParser(SafeConfigParser):
-    '''Subclass the SafeConfigParser - to preserve the original string case of 
+    '''Subclass the SafeConfigParser - to preserve the original string case of
     config section names
-    '''   
+    '''
     def optionxform(self, optionstr):
         '''Extend SafeConfigParser.optionxform to preserve case of option names
         '''
